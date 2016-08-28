@@ -1,0 +1,25 @@
+<p>Hello $CLASS_NAME students!</p>
+
+<p>Our class is coming up soon: $DATE_AND_TIME. We'll be at $VENUE_DETAILS.</p>
+
+<p>You should bring $LAPTOP_AND_HARDWARE with $BROWSERS_OR_SOFTWARE installed.</p>
+
+<p>Before class, please $COURSE_PREREQUISITES_AND_HOMEWORK.</p>
+
+<p>If you have any questions, feel free to post them in the comments, or click on my profile and message me directly.</p>
+
+<p>$FRIENDLY_CLOSING</p>
+
+-----
+
+Hello $CLASS_NAME students!
+
+Our class is coming up soon: $DATE_AND_TIME. We'll be at $VENUE_DETAILS.
+
+You should bring $LAPTOP_AND_HARDWARE with $BROWSERS_OR_SOFTWARE installed.
+
+Before class, please $COURSE_PREREQUISITES_AND_HOMEWORK.
+
+If you have any questions, feel free to post them in the comments, or click on my profile and message me directly.
+
+$FRIENDLY_CLOSING
