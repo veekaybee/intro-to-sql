@@ -21,24 +21,23 @@ password = # FILL IN
 def doQuery( conn, n_users ) :
     cur = conn.cursor()
 
+    try:
+        for i in range(0,n_users):
+            cur.execute("""CREATE USER \'newuser%i\'@\'localhost\' IDENTIFIED BY \'password%i\'""" % (i,i) )
+            cur.execute( """GRANT ALL PRIVILEGES ON * . * TO \'newuser%i\'@\'localhost\'""" % i )
+            cur.execute( """FLUSH PRIVILEGES""" )
+    except MySQLdb.Error, e:
         try:
-                for i in range(0,n_users):
-                            cur.execute("""CREATE USER \'newuser%i\'@\'localhost\' IDENTIFIED BY \'password%i\'""" % (i,i) )
-                                        cur.execute( """GRANT ALL PRIVILEGES ON * . * TO \'newuser%i\'@\'localhost\'""" % i )
-                                                    cur.execute( """FLUSH PRIVILEGES""" )
-                                                        except MySQLdb.Error, e:
-                                                                try:
-                                                                            print ("MySQL Error [%d]: %s" % (e.args[0], e.args[1]))
-                                                                                    except IndexError:
-                                                                                                print ("MySQL Error: %s" % str(e))
+            print ("MySQL Error [%d]: %s" % (e.args[0], e.args[1]))
+        except IndexError:
+            print ("MySQL Error: %s" % str(e))
 
 
-                                                                                                if __name__ == '__main__':
-                                                                                                    print("Using mysql.connector…")
-                                                                                                        myConnection = MySQLdb.connect( host=hostname, user=username, passwd=password, 20)
-                                                                                                            doQuery( myConnection )
-                                                                                                                myConnection.close()
-
+if __name__ == '__main__':
+    print("Using mysql.connector…")
+    myConnection = MySQLdb.connect( host=hostname, user=username, passwd=password, 20)
+    doQuery( myConnection )
+    myConnection.close()
 
 
 
