@@ -1,34 +1,46 @@
-> Please read the national chapter's slide creation guidelines in [the wiki](https://github.com/girldevelopit/gdi-slides-template/wiki). Then, delete this banner and add the specifics about your class below.
 
-# Add Your Course Title Here
 
-Slides and materials are hosted at [http://gdiphilly.github.io/your-repo-name/](http://gdiphilly.github.io/your-repo-name/).
+# Introduction to SQL
+
+Slides and materials are hosted at [http://gdiphilly.github.io/intro-to-sql](http://gdiphilly.github.io/intro-to-sql/).
 
 ## Course description
 
-Use this space for a short description of your course. We recommend using the description from your meetup event.
+Big data is sexy right now. SQL is like the hipster of data. It was cool before people were into data. Most large companies, and many small ones, store all the valuable information about their companies in databases, and SQL is the language to get at that data and find out what you want about your customers, your products, and your entire business. SQL is a declarative language, which means it reads a lot like English, and is easy to get started with.
 
-**Cost:** 
+This class will teach you how to query databases, create them, and edit them, to get the information you need without waiting for developers or business analysts. SQL power to the people.
 
-**Course length:** (days/hours) 
+
+
+**Cost:**
+
+**Course length:** (days/hours)
 
 ### Prerequisites:
 
-List any prerequisites for this class, including any previous classes or the equivalent self-study or real-world skills.
+This class is the second in a series of classes focusing on data, and goes hand-in-hand with an Intro to Database Design class. You don't need to have taken the class, but a familiarity with database concepts and terminology helps. No prior programming skills necessary, since SQL is all fun and declaratory like that.
 
 
 ### Tech requirements:
 
-Edit this list as needed for your class. The following are just suggestions.
-
  - Your laptop (Mac, PC, or Linux are all okay).
  - A modern web browser - either Chrome or Firefox with Firebug installed.
  - A text editor. We recommend Sublime Text 2 (free; available for Mac, PC, and Linux).
+ - Something to take notes with
 
 
 ### Topics covered:
 
- - The topics you plan to cover
- - Written in list form
- - Here's another one
+You'll learn:
 
+First Half (Morning):  How to Read a Database
+
+  + What's a Database? What's SQL?
+  + Select statement
+  + Group by statements
+  + Clauses and joins
+
+Second Half (Afternoon): How to Write to a Database
+
+  + Creating, deleting, and updating a table
+  + Super-awesome bonus round: subqueries
