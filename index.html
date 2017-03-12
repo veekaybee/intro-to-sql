@@ -90,7 +90,7 @@
 
 "> http://bit.ly/SQLTable</a>
 
-</p>
+				</p>
 				</section>
 
 				<section>
@@ -120,13 +120,292 @@
 				</section>
 
 				<section>
-					<h2>What's a relational database/</h2>
+					
+					<h2>Plan for the day: CRUD</h2>
+	
+					<h3 style="color: black">Morning (10-12): c<span style="color: violet">R</span>ud </h3>
+					<ul>
+						<li>What's a database? What's SQL?</li>
+						<li>How to query a database:</li>
+						<ul>
+							<li style="list-style-type: circle">Select statement (from statement)</li>
+							<ul style="list-style-type: square">
+								<li>Select, Distinct</li>
+								<li>Count</li>
+							</ul>
+							<li style="list-style-type: circle">Group By, Order By</li>
+							<li style="list-style-type: circle">Clauses</li>
+								<ul style="list-style-type: square">
+									<li>Where</li>
+									<li>Like</li>
+								</ul>
+								<li style="list-style-type: circle">Joins(Inner/Outer Left/Right)</li>
+								<li style="list-style-type: circle">Practice</li>
+						</ul>
+					</ul>
+						 
+				
+				</section>
+
+				<section>
+					
+					<h2>Plan for the day: CRUD</h2>
+	
+					<h3 style="color: black">Afternoon (12:30ish - 3): <span style="color: violet">C</span>r<span style="color: violet">UD</span></h3>
+					<ul>
+						<li>Super-awesome bonus round:</li>
+						<ul>
+							<li style="list-style-type: circle">Subqueries</li>
+						</ul>
+						<li>Practice</li>
+						<li>How to modify a database</li>
+							<ul style="list-style-type: circle">
+								<li>Creating a table</li>
+								<li>Udating a table with rows</li>
+								<li>Deleting Rows</li>
+								<ul ul style="list-style-type: square">
+									<li>v.s. deleting tables</li>
+								</ul>
+							</ul>
+							<li style="list-style-type: disc">Optomizing queries</li>
+							<li>Resoures and links</li>
+							<li>Practice</li>
+								<li>GDI Survey</li>
+						</ul>
+					</ul>
+						 
+				
+				</section>
+
+
+				<section>
+					<h2>What's a relational database?</h2>
 					<P>A virtual organized file cabinet that makes data available to people and computers across the organization.</P>
 
 					<img src="http://content.answcdn.com/main/content/img/getty/1/9/3315419.jpg" alt="Operator" height="300" width="300">
 				
-					<p>By the end of the class, you will be able to query and modify a SQL table to make sense of the data you have in a relational way.</p>
+					
 				</section>
+				<section>
+					
+					<h2 style="font-size: 48px">The language of relational databases</h2>
+					<div style="font-size:24px" style="line-height:16px">
+					<ul>
+						<li><span style="font-weight:900">Database: </span>A group of data organized in a logical way(Excel workbook)</li>
+						<ul>
+							<li style="list-style-type: circle"><span style="font-weight:900">Schema: </span> Layout of the database, sometimes interchangeable with database (Excel workbook + name of workbook)</li>
+							<li style="list-style-type: circle">Table: A subset of a database (Excel worksheet)</li>
+								<ul ul style="list-style-type: square">
+									<li>Rows (records) and columns (fields): Parts of a table </li>
+								</ul>
+						</ul>
+						<li><span style="color: violet">CRUD (Create, Read, Update, Delete): </span>How you change the databases and tables in the database</li>
+						<li>Relational Data Model : Data related to each other are stored a certain way and “point” to each other (Like Excel cell references)</li>
+						<li>Database keys (primary and foreign): The pointers in each table that can link to other tables</li>	
+						<li>Indexes: Make databases easier to search</li>
+						<li>RDBMS systems: Types of relational databases that have all the properties of relational data models: MySQL, Oracle, Access, Postgres</li>
+						<li>Queries: How to ask questions of the tables and databases</li>
+					</ul>
+					</div>
+				</section>
+
+				<section>
+					<h2>Databases, schemas, and tables</h2>
+					<p>DB Schema→ Table → Row → Value</p>
+					<img src="https://s-media-cache-ak0.pinimg.com/originals/15/4e/a5/154ea5bcf4a430980f137eae6f328075.jpg" alt="Nesting Dolls" width=500px>
+				<p>Excel File → Workbook → Row → Cell</p>			
+					
+				</section>
+
+				<section>
+             <h2>What does a relational database look like?</h2>
+             <img src="img/relational-model.png" alt="relational model" />
+         </section>
+
+         <section>
+					<h2>What's SQL?</h2>
+					<div style="font-family:Courier;font-size: 24px;line-height: 24px">
+					<ul style="list-style-type: none">       	
+						<li><span style="background-color:lime">select</span> user_name, sum(total_purchases)<li>
+						<li><span style="background-color:lime">from</span>  billing_database.user_table</li>
+						<li><span style="background-color:lime">where</span> user_name like 'Henderson%'</li>
+						<li><span style="background-color:lime">and</span> billing_month = 'January'</li>
+						<li><span style="background-color:lime">group</span> by user_name;</li>
+					</ul>
+					</div>
+					<br>
+					<ul>
+						<li>It's the language that the database speaks to bring you back data</li>
+						<li>Has a lot of words similar to English, but they have their own meaning as key words</li>
+						<li>Like Siri or Google Glass</li>
+					</ul>
+
+         </section>
+
+         <section>
+         	
+	         <h2>Different Flavors of SQL</h2>
+
+	         	<ul>
+	         	<li>How do you say that you want a can of Coca-Cola?</li>
+	         	<ul>
+								<li style="list-style-type: circle">Coke, soda or pop?</li>
+						</ul>
+						<li>How do you write SQL?</li>
+						</ul>
+						<br>
+							<table style="margin-left:150px">
+								<tr>
+									<td>Oracle</td>  
+									<td>MySQL</td>
+								</tr>
+								<tr>
+									<td>SQL Server</td>  
+									<td>Postgres</td>
+								</tr>
+								<tr>
+									<td>Access</td>  
+									<td>Sybase</td>
+								</tr>
+								<tr>
+									<td>DB2</td>
+								</tr>
+							</table>
+						<br>
+						<p>All <span style="color:blue;text-decoration: underline">different flavors</span> of the same language</p>
+         </section>
+
+         <section>
+         	
+         	<h2>Databases, schemas, and tables</h2>
+					
+					<img src="https://media3.giphy.com/media/8N5tQZ2X4byNi/200.webp#1" alt="guy giving horns" width=500px>
+
+					<ul>
+						<li><span style="background-color: violet">Reading</span> tables other people wrote</li>
+						<li><span style="background-color: violet">Modifying</span> those tables to add your own information/ creating your own tables to read from CSV files, other SQL tables, and other systems. </li>
+					</ul>
+
+
+         </section>
+
+         <section>
+         	
+         	<h2>Databases and CRUD</h2>
+
+					<ul style="list-style-type: none">
+						<li><span style="color: violet">Create</span> INSERT, CREATE</li>
+						<ul style="list-style-type: none">
+							<li>Adding rows to your table</li>
+						</ul>
+						<li><span style="color: violet">Read</span> SELECT</li>
+						<ul style="list-style-type: none">
+							<li>Picking specific information from your table</li>
+						</ul>
+						<li><span style="color: violet">Update</span> UPDATE, ALTER</li>
+						<ul style="list-style-type: none">
+							<li>Picking specific information from your table</li>
+						</ul>
+						<li><span style="color: violet">Delete</span> DELETE, DROP, TRUNCATE</li>
+						<ul style="list-style-type: none">
+							<li>Erase your data</li>
+						</ul>
+					</ul>
+         </section>
+
+         <section>
+         	<h2>What can you do with SQL?</h2>
+         	<p style="background-color: goldenrod">The power is in the relationship between data sets.</p>
+
+         	<ul>
+         		<li>How many customers do we have in Los Angeles?</li>
+         		<li>What's that person’s Facebook and Twitter handle?</li>
+         		<li>Did profits go up or down this quarter? </li>
+         		<li>How many users are clicking on our new site?</li>
+         	</ul>
+
+         </section>
+
+
+         <section>
+					<h2>Three parts of SQL</h2>
+					<p>SQL clauses: required order</p>
+					<div style="font-family:Courier;font-size: 24px;line-height: 24px; margin-left:250px">
+					<table style="width: 100%">  
+						<tr>
+							<td> PROC SQL;</td>  
+						              
+							<td>starts procedure</td>  
+						</tr> 
+						<tr>  	
+							<td>1 <span style="color:red">SELECT</span></td> 
+							
+							<td>selects variables</td>
+						</tr>
+						<tr>
+							<td>2 <span style="color:red">FROM</span></td>
+						
+							<td>opens datasets</td>
+						</tr>
+						<tr>
+							<td>3 WHERE</td>    
+							              
+							<td>restricts observations</td>
+						</tr>
+						<tr>
+							<td>4 GROUP BY</td>  
+							            
+							<td>groups observations</td>
+						</tr>
+						<tr>
+							<td>5 HAVING</td>   
+							              
+							<td>restricts groups</td>
+						</tr>
+						<tr>
+							<td>6 ORDER BY</td> 
+							             
+							<td>sorts results</td>
+						</tr>
+						<tr>
+						<td>QUIT;</td>  
+					                 
+						<td>ends procedure</td>
+						</tr>
+					</table>
+					</div>
+					<br>
+					<p style="font-size:14px">From: http://blogs.sas.com/</p>
+
+         </section>
+
+         <section>
+         	
+         	<h2>Lets develop it!</h2>
+         </section>
+
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 				<section>
 					<h2>Fantastic Ordered List</h2>
