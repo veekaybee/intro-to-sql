@@ -1166,11 +1166,262 @@
 					<h2>Let's develop it!</h2>
 				</section>
 
+				<section>
+					<h2>Left join example</h2>
+					<p>Left join: All the fields in the first table, plus the ones that match in the second table</p>
+					<br>
+					<ul style="list-style-type: none">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					SELECT first_name, last_name, hire_date,
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					title, c.from_date, c.to_date
+     					<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					FROM employees a
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					left JOIN titles c ON a.emp_no = c.emp_no;
+     				</li>
+     			</ul>
+     			<br><br>
+     			<p style="background-color: lime; font-weight: 900">
+     			What if you’d done a right join instead?</p>
 
 
+				</section>
+
+				<section>
+					<h2 style="font-size: 60px">Going all in:</h2>
+					<p style="font-size: 30px">What is this query telling us?</p>
+				 
+					<ul style="list-style-type: none">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					SELECT first_name, last_name,a.emp_no, hire_date, count( 
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					DISTINCT title) , count(DISTINCT salary)
+     					<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					FROM employees a
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					JOIN salaries b ON a.emp_no = b.emp_no
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					JOIN titles c ON a.emp_no = c.emp_no
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					where first_name like ‘A%’
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					GROUP BY first_name, last_name, hire_date,a.emp_no;
+     				</li>
+     			</ul>
+     			<img src="img/all-in-table.png" alt="All in table" width=550px/> 
+				</section>
+
+				<section>
+					<h2>Going all in again:</h2>
+					<p>What is this query bring back?</p>
+				 
+					<ul style="list-style-type: none">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					SELECT first_name, last_name, 
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					hire_date,a.emp_no, salary, from_date as
+     					<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					salary_start_date, to_date as
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					salary_end_date
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					FROM employees a
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					JOIN salaries b ON a.emp_no = b.emp_no
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					where salary >60000
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					and from_date >2000-01-01
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					order by last_name
+     				</li>
+     			</ul>
+     			<p style="font-size: 12px">Anyone whose salary is greater than $60,000 and who was hired after 1/1/2000</p>
+				</section>
+
+				<section>
+            <h2>Stretch break!</h2>
+            <img src="img/cat_stretch.jpg" alt="kitty!" />
+        </section>
+
+        <section>
+            <h2>Now the power of subqueries</h2>
+            <img src="https://s-media-cache-ak0.pinimg.com/564x/76/c4/1c/76c41c0bba186d02c7506684337635f8.jpg" alt="They don't know" width=564px>
+            <p>Using nested logic datasets to query other data sets</p>
+        </section>
+
+        <section>
+            <h2>Subqueries</h2>
+            <p>A subquery or inner query or nested query is a query within a query.</p>
+            <p>Most of the time, a subquery is used when you know how to search for a value using a SELECT statement, but do not know the exact value in the database.<br>
+--From Beginner SQL Tutorials</p>
+            <img src="img/small-nested-dolls.png" alt="Small Nested dolls" width=400px>
+            <p>Using nested logic datasets to query other data sets</p>
+        </section>
 
 
+        <section>
+            <h2 style="font-size: 60px">Subqueries: How much money did only the engineers make?</h2>
+            <img src="img/engineer-subquery.png" alt="Engineer subquery" width=800px>
+        </section>
 
+        <section>
+					<h2 style="font-size: 48px">What kind of business questions can we answer now?  SQL Power!</h2>
+					<p>Exercises:</p>
+				 	<ul>
+				 		<li>How many employees do we have></li>
+							<ul style="list-style-type: none">
+     						<li style="background-color: LightGray; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     						SELECT COUNT(DISTINCT emp_no)  
+     					</li>
+     					<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					FROM employees;</li>
+     					</ul>
+     					<li>How Many People Got Raises in 1999?</li>
+     						<ul style="list-style-type: none">
+	    							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+	     							select * from 
+	     							</li>
+	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+	     							select emp_no, count(*) as number_of_salaries from salaries
+
+	     							</li>
+	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+	     							where from_date>'1998-01-01'
+	     							</li>
+	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+	     							and from_date<'2000-01-01'
+	     							</li>
+	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+	     							group by emp_no) a
+	     							</li>
+	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+	     							where number_of_salaries >1
+	     							</li>
+     						</ul>
+     					<li>What’s the most common title we have?</li>
+     						<ul style="list-style-type: none">
+	    							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+	     							select title, count(distinct a.emp_no) from titles a
+	     							</li>
+	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+	     							join employees b 
+	     							</li>
+	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+	     							on a.emp_no=b.emp_no
+	     							</li>
+	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+	     							group by title
+	     							</li>
+     						</ul>
+     						</ul>
+     						</section>
+
+     		<section>
+     				<h2 style="font-size: 48px">What kind of business questions can we answer now?  SQL Power!</h2>
+						<p>Exercises:</p>
+     				<ul>
+     					<li>What's the top salary by department?</li>
+     					<li>How much money did non-engineers make></li>
+     					<li>Extra-hard question:</li>
+     					<ul>
+     						<li>How many women engineers got raises in 2000 versus male engineer, and who were their managers? </li>
+     					</ul>
+     			  </ul>
+				</section>
+
+				<section>
+					<h2>Rehash</h2>
+					<p>What did we do so far?</p>
+					<ul>
+						<li>What a database is</li>
+						<li>What a table is</li>
+						<li>Why relationships are good</li>
+						<li>How to query a table or database with SQL</li>
+						<li>How to read a SQL query</li>
+						<li>How to ask business questions with SQL</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>We learned cRud; now we learn CrUD</h2>
+					<p>Now that you see how powerful SQL is, let’s make some tables of our own. What if we have tons of data we want to query? </p>
+					<p>Or we want to join our Excel tables to other data?</p>
+				</section>
+
+				<section>
+					<h2 style="font-size: 50px">With great power comes great responsibility</h2>
+					<p>You have the ability to create tables. But also to delete them by accident, to create duplicate data,or to confuse people with data.</p>
+					<img src="http://i.imgur.com/Mps79UZ.jpg" alt="Genie" width=564px>
+					<p>You have the power to make people hate you.<span style="background-color: yellow">
+ Use it wisely :)</span></p>
+
+				</section>
+
+				<section>
+					<h2>Databases, schemas, and tables</h2>
+					<p>DB Schema→ Table → Row → Value</p>
+					<img src="https://s-media-cache-ak0.pinimg.com/originals/15/4e/a5/154ea5bcf4a430980f137eae6f328075.jpg" alt="Nesting Dolls" width=500px>
+					<p>Excel File → Workbook → Row → Cell</p>								
+				</section>
+
+				<section>
+					<h2>First we create our schema</h2>
+					<p>Name it with your first name or something easy you can remember; 
+					You’ll have to keep typing it, so under 10 characters is optimal</p>
+					<img src="img/schema-create.png" alt="Create Schema" width=700px>
+
+				</section>
+
+				<section>
+					<h3>And you should see it show up here:</h3>
+					<img src="img/schema-result.png" alt="Create Schema" width=700px>
+				</section>
+
+				<section>
+					<h3>Now we create a table to put in the schema</h3>
+					<p>Let's do favorite movies that we did at the beginning of the class. <br>
+					Let's have: First Name, Favorite Movie, Number of times watched</p>
+					<img src="img/movie-table.png" alt="Create Schema" width=700px>
+					<p>First, we need to design it a bit in our head. 
+						Which columns do we want? Which one will be the unique primary key? How to we want to name the columns?</p>
+				</section>
+
+				<section>
+					<h3>Things to think about when designing relational tables</h3>
+					<img src="img/feather.png" alt="feather" width=564px>
+					<ol>
+						<li>How will you join to other tables?</li>
+						<li>What kind of data are you storing?</li>
+						<li>Who else will use your tables?</li>
+					</ol>
+				</section>
+
+				<section>
+					<h3>Quick Overview of Database Design(from Sondra's class)</h3>
+					<p>Relational Database Model</p>	
+					<p>Storing the data as relations</p>
+					<ul>
+						<li>eliminates redundancy</li>
+						<li>saves space</li>
+						<li>reduces mistakes (ties in to consistency)</li>
+					</ul>
+				</section>
 
 
 				<section>
@@ -1181,6 +1432,7 @@
 						<li>Three!</li>
 					</ol>
 				</section>
+
                 
                 <section>
 					<h2>Speaker View</h2>
