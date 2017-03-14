@@ -50,55 +50,1829 @@
 			<div class="slides">
         <!-- Opening -->
 				<section>
-					<h1>GDI Reveal.js</h1>
+					<h1>Intro To SQL</h1>
                     <!-- <img src="img/circle-gdi-logo.png" alt="GDI Logo"/> -->
-					<h3>Girl Develop It's Framework for HTML Presentations</h3>
+					<h3>How do I get to all that cool data anyway?</h3>
+					
 					<p>
-						<small>Found at <a href ="http://github.com/girldevelopit/reveal.js">Girl Develop It reveal.js fork</a>.</small>
-					</p>
-					<p>
-						<small>Original Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						<small><a href="http://vickiboykis.com">Vickiboykis.com</a> / <a href="http://twitter.com/vboykis">@vboykis</a></small>
 					</p>
 				</section>
+
+					
         <!-- Compatibility-->
-				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.</p>
-						
-						<p>We highly recommend using Chrome, currently, however, the latest version of Safari, mobile Safari (iPad), Firefox and IE9 will work.
-					</p>
-				</section>
 				
 				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
+	         <h3>Welcome!</h3>
+	         <div class="left-align">
+	            <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
+	            <p><a href="https://www.girldevelopit.com/code-of-conduct">Our code of conduct</a></p>
+	            <p>Some "rules"</p>
+	            <ul>
+	                <li>We are here for you!</li>
+	                <li>Every question is important</li>
+	                <li>Help each other</li>
+	                <li>Have fun</li>
+	            </ul>
+	        </div>
+        </section>
+				
+				<section>
+					<h3>Tell Us About Yourself</h3>
+					
+					<ul>
+						<li>Who are you? (+ experience with SQL)</li>
+						<li>What do you hope to get out of the class?</li>
+						<li>What is your favorite movie, and how many times have you watched it?</li>
+					</ul>
+					<br><br><br>
+					<p>We're going to make a table out of this info in part 2, and the data will live here: <a href="http://bit.ly/SQLTable"> http://bit.ly/SQLTable</a></p>
+				</section>
+
+				<section>
+					<h2>About Me</h2>
+					<ul>
+						<li>Analyst working with big data</li>
+						<li>6+ years of experience with SQL</li>
+						<li>Favorite movie is Beauty and the Beast, watched 25 times. <small>(and that was just yesterday)</small></li>
+					</ul>
+					<img src="http://i984.photobucket.com/albums/ae323/arielstreasures/belle2.gif" alt="Beauty and the Beast">
 				</section>
 				
 				<!-- Examples of basic html based slides -->
 				<section>
-					<h2>Marvelous Unordered List</h2>
+					<h3>What to expect from the class</h3>
 					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
+						<li>This is a complement to the database design class</li>
+						<li>We'll be using the same terminology and building on those concepts</li>
+						<li>But we'll be hands-on</li>
+					</ul>
+					<img src="https://media.giphy.com/media/Dkp3uyouK71xm/giphy.gif" alt="Jim Jazz Hands" width=400px>		
+					<p>By the end of the class, you will be able to query and modify a SQL table to make sense of the data you have in a relational way.</p>
+				</section>
+
+				<section>
+					
+					<h3>Plan for the day: CRUD</h3>
+					<div style="max-width: 500px; font-size: 20px; margin: 20px" class="left">
+					<h3 style="color: black">Morning (10-12): c<span style="color: violet">R</span>ud </h3>
+					<ul>
+						<li>What's a database? What's SQL?</li>
+						<li>How to query a database:</li>
+						<ul>
+							<li style="list-style-type: circle">Select statement (from statement)</li>
+							<ul style="list-style-type: square">
+								<li>Select, Distinct</li>
+								<li>Count</li>
+							</ul>
+							<li style="list-style-type: circle">Group By, Order By</li>
+							<li style="list-style-type: circle">Clauses</li>
+								<ul style="list-style-type: square">
+									<li>Where</li>
+									<li>Like</li>
+								</ul>
+								<li style="list-style-type: circle">Joins(Inner/Outer Left/Right)</li>
+								<li style="list-style-type: circle">Practice</li>
+						</ul>
+					</ul>
+					</div>
+					<div style="max-width: 500px;font-size: 20px; margin: 20px" class="left">
+					<h3 style="color: black">Afternoon (12:30ish - 3): <span style="color: violet">C</span>r<span style="color: violet">UD</span></h3>
+					<ul>
+						<li>Super-awesome bonus round:</li>
+						<ul>
+							<li style="list-style-type: circle">Subqueries</li>
+						</ul>
+						<li>Practice</li>
+						<li>How to modify a database</li>
+							<ul style="list-style-type: circle">
+								<li>Creating a table</li>
+								<li>Udating a table with rows</li>
+								<li>Deleting Rows</li>
+								<ul ul style="list-style-type: square">
+									<li>v.s. deleting tables</li>
+								</ul>
+							</ul>
+							<li style="list-style-type: disc">Optomizing queries</li>
+							<li>Resoures and links</li>
+							<li>Practice</li>
+								<li>GDI Survey</li>
+						</ul>
+					</ul> 
+					</div>
+				
+				</section>
+
+				<section>
+					<h3>What's a relational database?</h3>
+					<P>A virtual organized file cabinet that makes data available to people and computers across the organization.</P>
+
+					<img src="img/operator.png" alt="Operator" width="900">
+				
+					
+				</section>
+				<section>
+					
+					<h4>The language of relational databases</h4>
+					<div style="font-size:24px" style="line-height:16px">
+					<ul>
+						<li><span style="font-weight:900">Database: </span>A group of data organized in a logical way(Excel workbook)</li>
+						<ul>
+							<li style="list-style-type: circle"><span style="font-weight:900">Schema: </span> Layout of the database, sometimes interchangeable with database (Excel workbook + name of workbook)</li>
+							<li style="list-style-type: circle">Table: A subset of a database (Excel worksheet)</li>
+								<ul ul style="list-style-type: square">
+									<li>Rows (records) and columns (fields): Parts of a table </li>
+								</ul>
+						</ul>
+						<li><span style="color: violet">CRUD (Create, Read, Update, Delete): </span>How you change the databases and tables in the database</li>
+						<li>Relational Data Model : Data related to each other are stored a certain way and “point” to each other (Like Excel cell references)</li>
+						<li>Database keys (primary and foreign): The pointers in each table that can link to other tables</li>	
+						<li>Indexes: Make databases easier to search</li>
+						<li>RDBMS systems: Types of relational databases that have all the properties of relational data models: MySQL, Oracle, Access, Postgres</li>
+						<li>Queries: How to ask questions of the tables and databases</li>
+					</ul>
+					</div>
+				</section>
+
+				<section>
+					<h3>Databases, schemas, and tables</h3>
+					<p>DB Schema→ Table → Row → Value</p>
+					<img src="https://s-media-cache-ak0.pinimg.com/originals/15/4e/a5/154ea5bcf4a430980f137eae6f328075.jpg" alt="Nesting Dolls" width=500px>
+				<p>Excel File → Workbook → Row → Cell</p>			
+					
+				</section>
+
+				<section>
+             <h3>What does a relational database look like?</h3>
+             <img src="img/relational-model.png" alt="relational model" width=800px/>
+         </section>
+
+         <section>
+					<h3>What's SQL?</h3>
+					<div style="font-family:Courier;font-size: 24px;line-height: 24px">
+					<ul style="list-style-type: none">       	
+						<li><span style="background-color:lime">select</span> user_name, sum(total_purchases)<li>
+						<li><span style="background-color:lime">from</span>  billing_database.user_table</li>
+						<li><span style="background-color:lime">where</span> user_name like 'Henderson%'</li>
+						<li><span style="background-color:lime">and</span> billing_month = 'January'</li>
+						<li><span style="background-color:lime">group</span> by user_name;</li>
+					</ul>
+					</div>
+					<br>
+					<ul>
+						<li>It's the language that the database speaks to bring you back data</li>
+						<li>Has a lot of words similar to English, but they have their own meaning as key words</li>
+						<li>Like Siri or Google Glass</li>
+					</ul>
+
+         </section>
+
+         <section>
+         	
+	         <h3>Different Flavors of SQL</h3>
+
+	         	<ul>
+	         	<li>How do you say that you want a can of Coca-Cola?</li>
+	         	<ul>
+								<li style="list-style-type: circle">Coke, soda or pop?</li>
+						</ul>
+						<li>How do you write SQL?</li>
+						</ul>
+						<br>
+							<table style="margin-left:150px">
+								<tr>
+									<td>Oracle</td>  
+									<td>MySQL</td>
+								</tr>
+								<tr>
+									<td>SQL Server</td>  
+									<td>Postgres</td>
+								</tr>
+								<tr>
+									<td>Access</td>  
+									<td>Sybase</td>
+								</tr>
+								<tr>
+									<td>DB2</td>
+								</tr>
+							</table>
+						<br>
+						<p>All <span style="color:blue;text-decoration: underline">different flavors</span> of the same language</p>
+         </section>
+
+         <section>
+         	
+	         	<h3>Databases, schemas, and tables</h3>
+						
+						<img src="https://media3.giphy.com/media/8N5tQZ2X4byNi/200.webp#1" alt="guy giving horns" width=500px>
+
+						<ul>
+							<li><span style="background-color: violet">Reading</span> tables other people wrote</li>
+							<li><span style="background-color: violet">Modifying</span> those tables to add your own information/ creating your own tables to read from CSV files, other SQL tables, and other systems. </li>
+						</ul>
+         </section>
+
+         <section>       
+	         	<h3>Databases and CRUD</h3>
+	         	<div style="font-size: 30px">
+							<ul style="list-style-type: none">
+								<li><span style="color: violet">Create</span> INSERT, CREATE</li>
+								<ul style="list-style-type: none">
+									<li>Adding rows to your table</li>
+								</ul>
+								<li><span style="color: violet">Read</span> SELECT</li>
+								<ul style="list-style-type: none">
+									<li>Picking specific information from your table</li>
+								</ul>
+								<li><span style="color: violet">Update</span> UPDATE, ALTER</li>
+								<ul style="list-style-type: none">
+									<li>Picking specific information from your table</li>
+								</ul>
+								<li><span style="color: violet">Delete</span> DELETE, DROP, TRUNCATE</li>
+								<ul style="list-style-type: none">
+									<li>Erase your data</li>
+								</ul>
+							</ul>
+						</div>
+         </section>
+
+         <section>
+	         	<h3>What can you do with SQL?</h3>
+	         	<p style="background-color: goldenrod">The power is in the relationship between data sets.</p>
+
+	         	<ul>
+	         		<li>How many customers do we have in Los Angeles?</li>
+	         		<li>What's that person’s Facebook and Twitter handle?</li>
+	         		<li>Did profits go up or down this quarter? </li>
+	         		<li>How many users are clicking on our new site?</li>
+	         	</ul>
+         </section>
+
+         <section>
+						<h3>Three parts of SQL</h3>
+						<p>SQL clauses: required order</p>
+						<div style="font-family:Courier;font-size: 24px;line-height: 24px; margin-left:250px">
+						<table style="width: 100%">  
+							<tr>
+								<td> PROC SQL;</td>  
+							              
+								<td>starts procedure</td>  
+							</tr> 
+							<tr>  	
+								<td>1 <span style="color:red">SELECT</span></td> 
+								
+								<td>selects variables</td>
+							</tr>
+							<tr>
+								<td>2 <span style="color:red">FROM</span></td>
+							
+								<td>opens datasets</td>
+							</tr>
+							<tr>
+								<td>3 WHERE</td>    
+								              
+								<td>restricts observations</td>
+							</tr>
+							<tr>
+								<td>4 GROUP BY</td>  
+								            
+								<td>groups observations</td>
+							</tr>
+							<tr>
+								<td>5 HAVING</td>   
+								              
+								<td>restricts groups</td>
+							</tr>
+							<tr>
+								<td>6 ORDER BY</td> 
+								             
+								<td>sorts results</td>
+							</tr>
+							<tr>
+							<td>QUIT;</td>  
+						                 
+							<td>ends procedure</td>
+							</tr>
+						</table>
+						</div>
+						<br>
+						<p style="font-size:14px">From: http://blogs.sas.com/</p>
+         </section>
+
+         <section>
+         	
+         	<h2>Lets develop it!</h2>
+         </section>
+
+
+         <section>
+         	<h3>Let's get started Reading tables</h3>
+         	<p>We'll use MySQL, a popular open-source version of SQL.</p>
+         	<p>If you've done anything online, chances are the transation went through MySQL (Walmart, Kayak, Facebook, Etsy, Verizon)</p>
+         	<br>
+         	<div style="background-color: LightGray">
+						<p>We'll log on to the front-end of MySQL, PHPMYAdmin.</p>
+						<p style="color:blue">http://bit.ly/SQLLogin</p>
+						<p style="color:blue">Your Password: http://bit.ly/GDIPHPLogin</p> 
+         	</div>
+         </section>
+
+         <section>
+             <h3>You should see a login:</h3>
+             <img src="img/php-login.png" alt="PHP login screen" width=900px/>
+         </section>
+
+     		<section>
+     			<h3>How PHPMyAdmin Works</h3>
+     			<img src="img/php-abstraction.png" alt="PHP abstraction" width=900px/>
+     		</section>
+
+     		<section>
+     			<h3>Two ways to execute in MySQL: PHPMyAdmin and command line</h3>
+     			<img src="img/ways-to-execute.png" alt="PHP abstraction" width=900px/>
+     		</section>
+
+     		<section>
+     			<h3>We’ll be focusing on phpMyAdmin for the first half of the class. There are tons of options.</h3>
+     			<p style="background-color: goldenrod; font-size: 25px">We have a test dataset of employee records we'll be using in the employee schema. </p>
+     			<img src="img/options.png" alt="Options" width=850px/>
+     		</section>
+
+     		<section>
+     			<h3 style="font-size: 48px">We're going to be looking at employee data in 6 tables in the employees schema</h3>
+     			<img src="img/employee-schema.png" alt="PHP abstraction" width=900px/>
+     		</section>
+
+     		<section>
+					<h3>Three parts of SQL</h3>
+					<p>SQL clauses: required order</p>
+					<div style="font-family:Courier;font-size: 24px;line-height: 24px; margin-left:250px">
+					<table style="width: 100%">  
+						<tr>
+							<td> PROC SQL;</td>  
+						              
+							<td>starts procedure</td>  
+						</tr> 
+						<tr>  	
+							<td>1 <span style="color:red">SELECT</span></td> 
+							
+							<td>selects variables</td>
+						</tr>
+						<tr>
+							<td>2 <span style="color:red">FROM</span></td>
+						
+							<td>opens datasets</td>
+						</tr>
+						<tr>
+							<td>3 WHERE</td>    
+							              
+							<td>restricts observations</td>
+						</tr>
+						<tr>
+							<td>4 GROUP BY</td>  
+							            
+							<td>groups observations</td>
+						</tr>
+						<tr>
+							<td>5 HAVING</td>   
+							              
+							<td>restricts groups</td>
+						</tr>
+						<tr>
+							<td>6 ORDER BY</td> 
+							             
+							<td>sorts results</td>
+						</tr>
+						<tr>
+						<td>QUIT;</td>  
+					                 
+						<td>ends procedure</td>
+						</tr>
+					</table>
+					</div>
+					<br>
+					<p style="font-size:14px">From: http://blogs.sas.com/</p>
+         </section>
+
+         <section>
+	         <h3>Tables and Schemas</h3>
+	         <p>Employees is the database/schema and it has 6 tables. </p>
+	         <p>Database/schema also used interchangeably when small datasets.</p>
+	         <img src="img/employee-table.png" alt="PHP abstraction" width=250px/>
+	         <p style="color:violet; font-size: 30px; line-height:30px">Database →  Schema ---> Table</p>
+	         <p style="color:violet; font-size: 30px; line-height:30px">Book ---> Chapter ---> Page</p>
+	         <p style="color:violet; font-size: 30px; line-height:30px">MySQL Database → Employees Schema → employees Table</p>
+			   </section>
+
+			   <section>
+			   	<h3>How to name schemas and tables</h3>
+			   	<ul style="list-style-type: none">
+			   		<li>Schema/Databse: <span style="font-family:Courier">Employees</span></li>
+			   		<li>Tables:</li>
+			   			<ul style="list-style-type: none">
+			   				<li style="font-family:Courier"> employees.employees,</li>
+			   				<li style="font-family:Courier"> employees.departments,</li>
+			   				<li style="font-family:Courier"> employees.salaries</li>
+			   			</ul>
+			   		<li>And so on.</li>
+			   	</ul>
+			   	<br><br>
+			   	<p style="background-color: lime;font-size: 24px">Usually it’s bad practice to name tables the same thing as the schema (confusing), but we’ll be ok with the small test data set.</p>
+			   </section>
+
+			   <section>
+			   		<h2>Let's develop it!</h2>
+			   </section>
+
+			   <section>
+     			<h3>Let's run our first query!</h3>
+     			<img src="img/first-query.png" alt="PHP abstraction" width=900px/>
+     		</section>
+
+     		<section>
+     			<h3>Select * from different tables</h3>
+     			<p>Try a couple of these:</p>
+     			<ul style="list-style-type: none; line-height: 30px">
+			   				<li style="font-family:Courier; background-color: yellow"> select * from employees.titles;</li>
+			   				<br>
+			   				<li style="font-family:Courier;background-color: yellow"> select * from employees.dept_emp;</li>
+			   				<br>
+			   				<li style="font-family:Courier; background-color: yellow"> select * from employees.salaries;</li>
+			   				<br>
+			   			</ul>
+			   			<p>and check out the tables/info
+     		</section>
+
+     		<section>
+     			<h3>Selecting specific columns</h3>
+     			<p>Now let's try selecting only certain columns</p>
+     			<img src="img/select-columns.png" alt="Select Columns" width=900px/>
+     		</section>
+
+     		<section>
+     			<h3>Now let's profile the data: (find out what we have)</h3>
+     			<p>Distinct: selecting only unique instatnces of that column.</p>
+     			<img src="img/distinct-result.png" alt="distinct result" width=400px>
+     		</section>
+
+     		<section>
+     			<h3>Difference between distinct and *</h3>
+     			<p>Distinct: Selecting only unique instances</p>
+     			<ul style="list-style-type: none; font-family: Courier">
+     				<li style="background-color: yellow">
+     					select count(distinct title) from employees.titles;
+     				</li>
+     				<li>7</li>
+     				<br>
+     				<li style="background-color: yellow">
+     					select count(title) from employees.titles;
+     				</li>
+     				<li>443,308</li>    				
+     			</ul>
+     		</section>
+
+     		<section>
+     			<h3>Difference between distinct and *</h3>
+     			<p>Distinct: Selecting only unique instances</p>
+     			<ul style="list-style-type: none; font-family: Courier">
+     				<li style="background-color: yellow">
+     					select count(*) from employees.titles;
+     				</li>
+     				<li>433,308</li>
+     				<br>
+     				<li style="background-color: yellow">
+     					select count(*) from employees.salaries;
+     				</li>
+     				<li>2,844,047</li>    				
+     			</ul>
+     			<br>
+     			<p>Which result set is bigger?</p>
+     			<p>What is each one telling us?</p>
+     		</section>
+
+     		<section>
+     			<h3>Which table is the largest?</h3>
+     			<p>The largest table has the most records. Which table is the largest in our database?</p>
+     			<ul style="list-style-type: none; font-family: Courier; font-size: 24px;line-height: 24px">
+     				<li>
+     					select count(*) from employees.departments;
+     				</li>
+     				<li style="font-weight: 900">9</li>
+     				<br>
+     				<li>
+     					select count(*) from employees.dept_emp;
+     				</li>
+     				<li style="font-weight: 900">331,603</li> 
+     				<br>
+     				<li>select count(*) from employees.dept_manager;</li>  
+     				<li style="font-weight: 900">24</li> 	
+     				<br>
+     				<li>select count(*) from employees.employees;</li>		
+     				<li style="font-weight: 900">300,024</li>	
+     				<br>
+     				<li>select count (*) from employees.salaries;</li>
+     				<li style="font-weight: 900">2,844,047</li>
+     				<br>
+     				<li>select count (*) from employees.titles;</li>
+     				<li style="font-weight: 900">443,308</li>
+     			</ul>
+     			<br>
+     		</section>
+
+     		<section>
+					<h3>Three parts of SQL</h3>
+					<p>SQL clauses: required order</p>
+					<div style="font-family:Courier;font-size: 24px;line-height: 24px; margin-left:250px">
+					<table style="width: 100%">  
+						<tr>
+							<td> PROC SQL;</td>  
+						              
+							<td>starts procedure</td>  
+						</tr> 
+						<tr>  	
+							<td>1 <span style="color:red">SELECT</span></td> 
+							
+							<td>selects variables</td>
+						</tr>
+						<tr>
+							<td>2 <span style="color:red">FROM</span></td>
+						
+							<td>opens datasets</td>
+						</tr>
+						<tr>
+							<td>3 WHERE</td>    
+							              
+							<td>restricts observations</td>
+						</tr>
+						<tr>
+							<td>4 GROUP BY</td>  
+							            
+							<td>groups observations</td>
+						</tr>
+						<tr>
+							<td>5 HAVING</td>   
+							              
+							<td>restricts groups</td>
+						</tr>
+						<tr>
+							<td>6 ORDER BY</td> 
+							             
+							<td>sorts results</td>
+						</tr>
+						<tr>
+						<td>QUIT;</td>  
+					                 
+						<td>ends procedure</td>
+						</tr>
+					</table>
+					</div>
+					<br>
+					<p style="font-size:14px">From: http://blogs.sas.com/</p>
+
+         </section>
+
+         <section>
+         	<h3>Now let's get fancy with group statements</h3>
+         	<p>Group statements corral data together into categories when we want to count things by groups of things</p>
+         	<p>i.e. How many total dogs vs puppies vs parents.</p>
+         	<img src="img/dog-moms.png" alt="Select Columns" width=350px/>
+         	<br>
+         	<ul style="list-style-type: none; font-family: Courier; font-size: 24px; text-align: left">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
+     					SELECT type_of_dog,count(*);
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
+     					FROM animals.total_dogs;
+     				</li><li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
+     					GROUP BY type_of_dog;
+     				</li>	
+     			</ul>
+         </section>
+
+         <section>
+         	<h3>Counting Titles and Salaries</h3>
+         	<ul style="list-style-type: none; font-family: Courier; font-size: 24px; ">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
+     					select title, count(*) from
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
+     					employees.titles
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
+     					group by title;
+     				</li>	
+     			</ul>
+     			<br>
+     			<img src="img/titles-and-salaries.png" alt="Select Columns" width=250px/>
+     			<p>What is this telling us?</p>
+     			<p>How many instances of that title are there in the table?</p>
+         </section>
+
+         <section>
+         	<h3>More group by examples</h3>
+         	<ul style="list-style-type: none; font-family: Courier; font-size: 24px; ">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
+     					select dept_name, count(*) from departments
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
+     					group by dept_name;
+     				</li>	
+     			</ul>
+     			<br>
+     			<img src="img/more-group-by-examples.png" alt="Select Columns" width=250px/>
+     			<p>How many instances of that department are there in that table?</p>
+         </section>
+
+         <section>
+         	<h3>Group by more than one item</h3>
+         	<img src="img/group-by-more-than-one-item.png" alt="Group by More than One Item" width=800px/>
+         </section>
+
+         <section>
+         	<h4>Let's try some exercises that combine count (*), distinct and group by</h4>
+	         <p>How many unique salaries does each employee have? (that is how many times have they been given raises?)</p>
+	         <ul style="list-style-type: none; font-family: Courier; font-size: 24px; ">
+	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
+	     					select emp_no, count(distinct salary)
+	     				</li>
+	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
+	     					from salaries
+	     				</li>
+	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
+	     					group by emp_no;
+	     				</li>	
+	     			</ul>
+	     			<br><br>
+	     			<p>How many managers has each department had?</p>
+	         <ul style="list-style-type: none; font-family: Courier; font-size: 24px; ">
+	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
+	     					select dept_no, count(emp_no) from dept_manager
+	     				</li>
+	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
+	     					group by dept_no;
+	     				</li>	
+	     			</ul>
+	     			<br><br>
+	     			<p>How many people that were born on the same day, have the same first name, and same gender are there that work for this company?</p>
+	         <ul style="list-style-type: none; font-family: Courier; font-size: 24px; ">
+	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
+	     					select birth_date,first_name,gender, count(*) from
+	     				</li>
+	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
+	     					employees group by birth_date, first_name, gender;
+	     				</li>	
+	     			</ul>
+     			<br>
+         </section>
+
+         <section>
+	         	<h3>Another kind of group by: maximum and minimum</h3>
+	         <p>When was your youngest employee born?</p>
+	         <ul style="list-style-type: none">
+	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+	     					select max(birth_date) from employees;
+	     				</li>
+	     				<li style="background-color: lime;font-size: 20px;line-height: 24px"> 
+	     					In this case, you don’t need the group-by statement since you’re not counting groups of people, but looking at the whole table
+	     				</li>
+	     				</ul>
+	     			<br><br>
+	     			<p>When was your youngest male employee born?</p>
+	         <ul style="list-style-type: none; font-family: Courier; font-size: 24px; ">
+	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
+	     					select gender, min(birth_date)
+	     				</li>
+	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
+	     					from employees
+	     				</li>	
+	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
+	     					group by gender;
+	     				</li>	
+	     			</ul>
+         </section>
+
+         <section>
+         	<h3>Order by: Sorts by terms you want</h3>
+
+         <ul style="list-style-type: none; font-family: Courier; font-size: 20px; ">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
+     					SELECT first_name, gender, count( * )
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
+     					from employees
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
+     					GROUP BY first_name, gender
+     				</li>	
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
+     					order by first_name;
+     				</li>	
+     			</ul>     			
+     			<p style="font-size: 26px">Will sort by first name ascending, unless you specify desc.</p>
+
+         <ul style="list-style-type: none; font-family: Courier; font-size: 20px; ">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
+     					SELECT first_name, gender, count( * )
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
+     					from employees
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
+     					GROUP BY first_name, gender
+     				</li>	
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
+     					order by first_name <span style="font-weight: 900">desc;</span>
+     				</li>	
+     			</ul>
+     			<br><br>
+     			<p style="font-size: 26px">Ordering by more than one column, will sort by the first, then by the second, ascending</p>
+         <ul style="list-style-type: none; font-family: Courier; font-size: 20px; ">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
+     					sselect gender, birth_date from employees
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
+     					order by gender, birth_date;
+     				</li>	
+     			</ul>
+     			<br><br>
+     			<p style="font-size: 26px">Order by count(*) of your table</p>
+         <ul style="list-style-type: none; font-family: Courier; font-size: 20px; ">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
+     					SELECT first_name, gender, count( * )
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
+     					from employees
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
+     					GROUP BY first_name, gender
+     				</li>	
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
+     					ORDER BY COUNT( * ) DESC
+     				</li>	
+     			</ul>
+         </section>
+
+         <section>
+         	<h3>Order by exercises</h3>
+         	<p style="font-size: 22px">Order by a number ascending</p>
+         	<ul style="list-style-type: none">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					select emp_no, salary from salaries
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					order by salary asc;
+     				</li>
+     			</ul>
+     			<br><br>
+     			<p>Order by a number descending</p>
+         	<ul style="list-style-type: none">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					select emp_no, salary from salaries
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					order by emp_no desc; 
+     				</li>
+     			</ul>
+         </section>
+
+
+     		<section>
+					<h3>Three parts of SQL</h3>
+					<p>SQL clauses: required order</p>
+					<div style="font-family:Courier;font-size: 24px;line-height: 24px; margin-left:250px">
+					<table style="width: 100%">  
+						<tr>
+							<td> PROC SQL;</td>  
+						              
+							<td>starts procedure</td>  
+						</tr> 
+						<tr>  	
+							<td>1 <span style="color:red">SELECT</span></td> 
+							
+							<td>selects variables</td>
+						</tr>
+						<tr>
+							<td>2 <span style="color:red">FROM</span></td>
+						
+							<td>opens datasets</td>
+						</tr>
+						<tr>
+							<td>3 WHERE</td>    
+							              
+							<td>restricts observations</td>
+						</tr>
+						<tr>
+							<td>4 GROUP BY</td>  
+							            
+							<td>groups observations</td>
+						</tr>
+						<tr>
+							<td>5 HAVING</td>   
+							              
+							<td>restricts groups</td>
+						</tr>
+						<tr>
+							<td>6 ORDER BY</td> 
+							             
+							<td>sorts results</td>
+						</tr>
+						<tr>
+						<td>QUIT;</td>  
+					                 
+						<td>ends procedure</td>
+						</tr>
+					</table>
+					</div>
+					<br>
+					<p style="font-size:14px">From: http://blogs.sas.com/</p>
+         </section>
+
+         <section>
+         	<h3>Where Clause: Like a Filter</h3>
+         	<p>You only want to select certain things. (Excel filters)</p>
+         	<ul style="list-style-type: none">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					SELECT first_name, gender, count(*)
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					FROM employees
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					where first_name=’Adam’
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					GROUP BY first_name, gender;
+     				</li>
+     			</ul>
+     			<br><br>
+     				<img src="img/where-clause.png" alt="Group by More than One Item" width=400px/>
+         </section>
+
+         <section>
+		         	<h3>Really useful with 'like' statements</h3>
+		         	<p style="font-size: 32px">“Like” will pick up anything similar to what you entered.</p>
+		         	<ul style="list-style-type: none">
+		     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+		     					SELECT last_name, count( * )
+		     				</li>
+		     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+		     					FROM employees
+		     				</li>
+		     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+		     					WHERE last_name LIKE "S%"
+		     				</li>
+		     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+		     					GROUP BY last_name;
+		     				</li>
+		     			</ul>
+		     			<img src="img/like.png" alt="Group by More than One Item" width=200px/>
+		     			<div style="font-size: 26px;line-height: 26px">
+		     				<ul style="list-style-type: none">
+		     				<br>
+		     				<li>Exercises:</li>
+		     				<ul>
+		     					<li>What happens when you search in all caps?</li>
+		     					<li>What happens when you do last_name = “S%”</li>
+		     					<li>What’s the difference between like and =?</li>
+		     					<ul>
+		     						<li>Like is more like a search engine</li>
+		     						<li>= means you have to have an exact match</li>
+		     					</ul>
+		     				</ul>
+		     			</ul>
+		     		</div>		
+         </section>
+
+         <section>
+         	<h3>Where clause exercises</h3>
+         	<p>Only all the females</p>
+         	<ul style="list-style-type: none">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					select * from employees
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					where gender=’F’;
+     				</li>
+     				<li style="font-size: 20px">*What happens if you don't include the quotation marks?</li>
+     			</ul>
+     			<br><br>
+     			<p>Only all of the engineers</p>
+         	<ul style="list-style-type: none">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					SELECT * FROM titles
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					WHERE title LIKE '%Engineer%'; 
+     				</li>
+     			</ul>
+         </section>
+
+         <section>
+         	<h3>A couple of things to note about greater/less than/equal to</h3>
+    
+         	<ul style="list-style-type: none">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					where number >='5';
+     				</li>
+     				<ul style="list-style-type: none">
+	     				<li style="font-family: Courier; font-size: 24px;">
+	     					brings back (5,6,7,8...)
+	     				</li>
+     				</ul>
+
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					where number > '5';
+     				</li>
+     				<ul style="list-style-type: none">
+	     				<li style="font-family: Courier; font-size: 24px;">
+	     					brings back (6,7,8...)
+	     				</li>
+     				</ul>
+
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					where day <= ‘1-jan-2017’
+     				</li>
+     				<ul style="list-style-type: none">
+	     				<li style="font-family: Courier; font-size: 24px;">
+	     					brings back: (Jan 1, Dec. 31, Dec. 30…)
+
+	     				</li>
+     				</ul>
+
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					where day < ‘1-jan-2017’
+     				</li>
+     				<ul style="list-style-type: none">
+	     				<li style="font-family: Courier; font-size: 24px;">
+	     					brings back:  (Dec. 31, Dec. 30…)
+	     				</li>
+     				</ul>
+
+						<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+
+						where != ‘1-Jan-2017’
+     				</li>
+     				<ul style="list-style-type: none">
+	     				<li style="font-family: Courier; font-size: 24px;">
+	     					brings back anything other than Jan 1
+	     				</li>
+     				</ul> 				
+     			</ul>
+         </section>
+
+         <section>
+         	<h3>Cooking with the good suff: joins</h3>
+         	<p>One table is great. But the power of SQL comes from being able to join related tables to get information.</p>
+         	<img src="img/join-guys.png" alt="Group by More than One Item" width=600px/>
+         </section>
+
+         <section>
+					
+					<h3>Plan for the day: CRUD</h3>
+					<div style="max-width: 500px; font-size: 20px; margin: 20px" class="left">
+					<h3 style="color: black">Morning (10-12): c<span style="color: violet">R</span>ud </h3>
+					<ul>
+						<li>What's a database? What's SQL?</li>
+						<li>How to query a database:</li>
+						<ul>
+							<li style="list-style-type: circle">Select statement (from statement)</li>
+							<ul style="list-style-type: square">
+								<li>Select, Distinct</li>
+								<li>Count</li>
+							</ul>
+							<li style="list-style-type: circle">Group By, Order By</li>
+							<li style="list-style-type: circle">Clauses</li>
+								<ul style="list-style-type: square">
+									<li>Where</li>
+									<li>Like</li>
+								</ul>
+								<li style="list-style-type: circle">Joins(Inner/Outer Left/Right)</li>
+								<li style="list-style-type: circle">Practice</li>
+						</ul>
+					</ul>
+					</div>
+					<div style="max-width: 500px;font-size: 20px; margin: 20px" class="left">
+					<h3 style="color: black">Afternoon (12:30ish - 3): <span style="color: violet">C</span>r<span style="color: violet">UD</span></h3>
+					<ul>
+						<li>Super-awesome bonus round:</li>
+						<ul>
+							<li style="list-style-type: circle">Subqueries</li>
+						</ul>
+						<li>Practice</li>
+						<li>How to modify a database</li>
+							<ul style="list-style-type: circle">
+								<li>Creating a table</li>
+								<li>Udating a table with rows</li>
+								<li>Deleting Rows</li>
+								<ul ul style="list-style-type: square">
+									<li>v.s. deleting tables</li>
+								</ul>
+							</ul>
+							<li style="list-style-type: disc">Optomizing queries</li>
+							<li>Resoures and links</li>
+							<li>Practice</li>
+								<li>GDI Survey</li>
+						</ul>
+					</ul> 
+					</div>	
+				</section>
+
+				<section>
+					<h3>Let's connect multiple tables</h3>
+					<p style="background-color: violet">Emp_no is the column that’s the primary key for all three tables that allows us to join them</p>
+					<img src="img/join-tables.png" alt="Group by More than One Item" width=600px/>
+					<ul>
+						<li>We join by <span style="font-weight: 900px">primary keys:</span> A field (or set of fields) that uniquely determine a row.</li>
+						<li>Values in PK must be unique in table (no duplicates allowed); Only one PK per table allowed</li>
+						<li>To <span style="font-weight: 900px">foreign keys:</span> A field (or set of fields) that is a PK in some other table.</li>
 					</ul>
 				</section>
 
 				<section>
-					<h2>Fantastic Ordered List</h2>
+					<h3>How all the tables join in our schema</h3>
+					<img src="img/join-schema.png" alt="Group by More than One Item" width=900px/>
+				</section>
+
+				<section>
+					<h3>In SQL, a join looks like this:</h3>
+					<img src="img/join-sql.png" alt="Group by More than One Item" width=700px/>
+					<p style="background-color: lime; font-size: 24px;font-weight: 900">Often when we join tables, we make them easier to reference later on by aliasing them, but at this point it’s a style choice.<p> 
+				</section>
+
+				<section>
+					<h3 style="font-size: 50px">You can now select columns that, before, only existed in either table</h3>
+					<p>Find out salary history:</p>
+					
+					<ul style="list-style-type: none">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					SELECT first_name, last_name, hire_date,
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					salary, from_date, to_date
+     					<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					FROM employees a
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					JOIN salaries b ON a.emp_no = b.emp_no
+     				</li>
+     			</ul>
+     			<img src="img/join-table-data.png" alt="Group by More than One Item" width=600px/>
+				</section>
+
+				<section>
+					<h3>Another join example</h3>
+					<p>When you have two columns from different tables with the same name, you have to reference them specifically.</p>
+					<img src="img/another-join-example.png" alt="Group by More than One Item" width=700px/>
+				</section>
+
+				<section>
+					<h3 style="font-size: 49px">Different types of joins</h3>
+					<img src="https://dsin.files.wordpress.com/2013/03/sqljoins_cheatsheet.png" alt="Join cheatsheat" width=800px>
+				<small>https://dsin.files.wordpress.com/2013/03/sqljoins_cheatsheet.png</small>
+				</section>
+
+				<section>
+					<h2>Let's develop it!</h2>
+				</section>
+
+				<section>
+					<h3>Left join example</h3>
+					<p>Left join: All the fields in the first table, plus the ones that match in the second table</p>
+					<br>
+					<ul style="list-style-type: none">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					SELECT first_name, last_name, hire_date,
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					title, c.from_date, c.to_date
+     					<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					FROM employees a
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
+     					left JOIN titles c ON a.emp_no = c.emp_no;
+     				</li>
+     			</ul>
+     			<br><br>
+     			<p style="background-color: lime; font-weight: 900">
+     			What if you’d done a right join instead?</p>
+
+
+				</section>
+
+				<section>
+					<h3>Going all in:</h3>
+					<p style="font-size: 30px">What is this query telling us?</p>
+				 
+					<ul style="list-style-type: none">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					SELECT first_name, last_name,a.emp_no, hire_date, count( 
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					DISTINCT title) , count(DISTINCT salary)
+     					<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					FROM employees a
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					JOIN salaries b ON a.emp_no = b.emp_no
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					JOIN titles c ON a.emp_no = c.emp_no
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					where first_name like ‘A%’
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					GROUP BY first_name, last_name, hire_date,a.emp_no;
+     				</li>
+     			</ul>
+     			<img src="img/all-in-table.png" alt="All in table" width=550px/> 
+				</section>
+
+				<section>
+					<h3>Going all in again:</h3>
+					<p>What is this query bring back?</p>
+				 
+					<ul style="list-style-type: none">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					SELECT first_name, last_name, 
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					hire_date,a.emp_no, salary, from_date as
+     					<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					salary_start_date, to_date as
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					salary_end_date
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					FROM employees a
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					JOIN salaries b ON a.emp_no = b.emp_no
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					where salary >60000
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					and from_date >2000-01-01
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					order by last_name
+     				</li>
+     			</ul>
+     			<p style="font-size: 12px">Anyone whose salary is greater than $60,000 and who was hired after 1/1/2000</p>
+				</section>
+
+				<section>
+            <h2>Stretch break!</h2>
+            <img src="img/cat_stretch.jpg" alt="kitty!" />
+        </section>
+
+        <section>
+            <h3>Now the power of subqueries</h3>
+            <img src="https://s-media-cache-ak0.pinimg.com/564x/76/c4/1c/76c41c0bba186d02c7506684337635f8.jpg" alt="They don't know" width=564px>
+            <p>Using nested logic datasets to query other data sets</p>
+        </section>
+
+        <section>
+            <h3>Subqueries</h3>
+            <p>A subquery or inner query or nested query is a query within a query.</p>
+            <p>Most of the time, a subquery is used when you know how to search for a value using a SELECT statement, but do not know the exact value in the database.<br>
+--From Beginner SQL Tutorials</p>
+            <img src="img/small-nested-dolls.png" alt="Small Nested dolls" width=400px>
+            <p>Using nested logic datasets to query other data sets</p>
+        </section>
+
+
+        <section>
+            <h3>Subqueries: How much money did only the engineers make?</h3>
+            <img src="img/engineer-subquery.png" alt="Engineer subquery" width=800px>
+        </section>
+
+        <section>
+					<h3 style="font-size: 48px">What kind of business questions can we answer now?  SQL Power!</h3>
+					<p>Exercises:</p>
+				 	<ul>
+				 		<li>How many employees do we have></li>
+							<ul style="list-style-type: none">
+     						<li style="background-color: LightGray; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     						SELECT COUNT(DISTINCT emp_no)  
+     					</li>
+     					<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					FROM employees;</li>
+     					</ul>
+     					<li>How Many People Got Raises in 1999?</li>
+     						<ul style="list-style-type: none">
+	    							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+	     							select * from 
+	     							</li>
+	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+	     							select emp_no, count(*) as number_of_salaries from salaries
+
+	     							</li>
+	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+	     							where from_date>'1998-01-01'
+	     							</li>
+	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+	     							and from_date<'2000-01-01'
+	     							</li>
+	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+	     							group by emp_no) a
+	     							</li>
+	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+	     							where number_of_salaries >1
+	     							</li>
+     						</ul>
+     					<li>What’s the most common title we have?</li>
+     						<ul style="list-style-type: none">
+	    							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+	     							select title, count(distinct a.emp_no) from titles a
+	     							</li>
+	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+	     							join employees b 
+	     							</li>
+	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+	     							on a.emp_no=b.emp_no
+	     							</li>
+	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+	     							group by title
+	     							</li>
+     						</ul>
+     						</ul>
+     		</section>
+
+     		<section>
+     				<h3 style="font-size: 48px">What kind of business questions can we answer now?  SQL Power!</h3>
+						<p>Exercises:</p>
+     				<ul>
+     					<li>What's the top salary by department?</li>
+     					<li>How much money did non-engineers make></li>
+     					<li>Extra-hard question:</li>
+     					<ul>
+     						<li>How many women engineers got raises in 2000 versus male engineer, and who were their managers? </li>
+     					</ul>
+     			  </ul>
+				</section>
+
+				<section>
+					<h3>Rehash</h3>
+					<p>What did we do so far?</p>
+					<ul>
+						<li>What a database is</li>
+						<li>What a table is</li>
+						<li>Why relationships are good</li>
+						<li>How to query a table or database with SQL</li>
+						<li>How to read a SQL query</li>
+						<li>How to ask business questions with SQL</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>We learned cRud; now we learn CrUD</h3>
+					<p>Now that you see how powerful SQL is, let’s make some tables of our own. What if we have tons of data we want to query? </p>
+					<p>Or we want to join our Excel tables to other data?</p>
+				</section>
+
+				<section>
+					<h3>With great power comes great responsibility</h3>
+					<p>You have the ability to create tables. But also to delete them by accident, to create duplicate data,or to confuse people with data.</p>
+					<img src="http://i.imgur.com/Mps79UZ.jpg" alt="Genie" width=564px>
+					<p>You have the power to make people hate you.<span style="background-color: yellow">
+ Use it wisely :)</span></p>
+
+				</section>
+
+				<section>
+					<h3>Databases, schemas, and tables</h3>
+					<p>DB Schema→ Table → Row → Value</p>
+					<img src="https://s-media-cache-ak0.pinimg.com/originals/15/4e/a5/154ea5bcf4a430980f137eae6f328075.jpg" alt="Nesting Dolls" width=500px>
+					<p>Excel File → Workbook → Row → Cell</p>								
+				</section>
+
+				<section>
+					<h3>First we create our schema</h3>
+					<p>Name it with your first name or something easy you can remember; 
+					You’ll have to keep typing it, so under 10 characters is optimal</p>
+					<img src="img/schema-create.png" alt="Create Schema" width=700px>
+				</section>
+
+				<section>
+					<h3>And you should see it show up here:</h3>
+					<img src="img/schema-result.png" alt="Create Schema" width=700px>
+				</section>
+
+				<section>
+					<h3>Now we create a table to put in the schema</h3>
+					<p>Let's do favorite movies that we did at the beginning of the class. <br>
+					Let's have: First Name, Favorite Movie, Number of times watched</p>
+					<img src="img/movie-table.png" alt="Create Schema" width=700px>
+					<p>First, we need to design it a bit in our head. 
+						Which columns do we want? Which one will be the unique primary key? How to we want to name the columns?</p>
+				</section>
+
+				<section>
+					<h3>Things to think about when designing relational tables</h3>
+					<img src="img/feather.png" alt="feather" width=564px>
 					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
+						<li>How will you join to other tables?</li>
+						<li>What kind of data are you storing?</li>
+						<li>Who else will use your tables?</li>
 					</ol>
 				</section>
-                
-                <section>
+
+				<section>
+					<h3>Quick Overview of Database Design(from Sondra's class)</h3>
+					<p>Relational Database Model</p>	
+					<p>Storing the data as relations</p>
+					<ul>
+						<li>eliminates redundancy</li>
+						<li>saves space</li>
+						<li>reduces mistakes (ties in to consistency)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Quick Overview of Database Design(from Sondra's class)</h3>
+					<p>Tables are joined on special fields called keys</p>	
+					<ul style="list-style-type: none">
+						<li>Primary Key (PK)</li>
+						<ul>
+						<li>A field (or set of fields) that uniquely identify a row</li>
+						<li>In math speak, the minimal set of fields that the row is <span style="font-weight: 900">functionally dependent</span> upon</li>
+						</ul>
+					</ul>
+					<br><br>
+					<ul style="list-style-type: none">
+						<li>Foreign Reference Key (FK)</li>
+						<ul>
+						<li>A field (or set of fields) that is a PK in some other table</li>
+						<li>IThere can be multiple FK in a table</li>
+						<li>Points to a row in another table</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+						<h3>Data Types</h3>
+						<p>Data usually comes in two types: numbers and charactes</p>
+						<ul>
+							<li style="font-weight=900">Numbers</li>
+							<ul>
+								<li>Boolean: True or False <span style="color:orange">[0,1]</span></li>
+								<li>Int/TinyInt: whole numbers, negatives <span style="color:orange">[5, -7]</span></li>
+								<li>Decimal: <span style="color:orange">[.5555, 2.40404040]</span></li>
+							</ul>
+							<li style="font-weight=900">Strings</li>
+							<ul>
+								<li>Varchar(can't add/subtract):<span style="color:orange">[Belle, five,5]</span></li>
+								<ul>
+									<li>Have to specify length</li>
+								</ul>
+								<li>Blob: <span style="color:orange">[9999349234023403204300000]</span></li>
+							</ul>
+							<li style="font-weight=900">Dates/Times</li>
+							<ul>
+								<li>Date: <span style="color:orange">2013-01-01, 9/1/2012]</span></li>
+								<li>Timestamp(UTC) <span style="color:orange">[1385496316]</span></li>
+							</ul>
+					</ul>
+					<p style="font-size: 12px">*Accepted mySQL formats: https://dev.mysql.com/doc/refman/5.0/en/numeric-types.html</p>
+				</section>
+
+				<section>
+					<h3>Let's look at the data types in the tables we have</h3>
+					<p>By going to STRUCTURE</p>
+					<img src="img/table-structure.png" alt="table structure" width=700px>	
+				</section>
+
+				<section>
+					<h3>Our movie database (with real data)</h3>
+					<img src="img/movie-table.png" alt="movie table" width=650px>	
+					<ul>
+						<li>First Name as the Primary Key and Foreign Key</li>
+						<ul>
+							<li>We can join by the name, as long as it’s unique</li>
+							<li>But our names aren’t unique, so we’ll create an incrementer</li>
+						</ul>
+						<li>First Name Should be a Character Field.</li>
+						<li>Favorite Movie should be a character Field.</li>
+						<li>Times Watched should be an Integer. We want to be able to add it.</li>
+					</ul>
+				</section>
+		
+				<section>
+					<h3>Two ways to execute in MySQL: PHPMyAdmin and command line</h3>
+					<img src="img/two-ways-to-exec-sql.png" alt="two ways to execute sql" width=800px>	
+					<p>For the second half of the class we’ll be working with commands more than the UI, but there is usually more than 1 way to do everything in MySQL.</p>
+				</section>
+
+				<section>
+					<h3>How to create a table with SQL</h3>
+					<p>Run in the sample place you did your select statements:</p>
+					<img src="img/sql-create.png" alt="sql create" width=800px>	
+				</section>
+
+				<section>
+					<h3 style="font-size: 50px">Some Data types in MySQL(Part 2)</h3>
+					<table style="width:100%; font-size: 28px">
+  						<tr>
+    						<td>CHAR()</td>
+    						<td>A fixed section from 0 to 255 characters long.</td>
+  						</tr>
+  						<tr>
+    						<td>VARCHAR( )</td>
+    						<td>A variable section from 0 to 255 characters long.</td>
+  						</tr>
+  						<tr>
+    						<td>TINYTEXT</td>
+    						<td>A string with a maximum length of 255 characters.</td>
+  						</tr>
+  						<td>TEXT</td>
+    						<td>A string with a maximum length of 65,535 characters.</td>
+  						</tr>
+  						<td>BLOB</td>
+    						<td>A string with a maximum length of 65,535 characters.</td>
+  						</tr>
+  						</tr>
+  						<td>MEDIUMTEXT</td>
+    						<td>A string with a maximum length of 16777215 characters.</td>
+  						</tr>
+  						<td>MEDIUMBLOB</td>
+    						<td>A string with a maximum length of 16777215 characters.</td>
+  						</tr>
+  						<td>LONGTEXT</td>
+    						<td>A string with a maximum length of 4294967295 characters.</td>
+  						</tr>
+  						<td>LONGBLOB</td>
+    						<td>A string with a maximum length of 4294967295 characters.</td>
+  						</tr>
+  					</table>
+				</section>
+
+
+
+				<section>
+					<h3>Here's the create statement for one of the tables we've been working with</h3>			 
+					<ul style="list-style-type: none">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					CREATE TABLE employees ( 
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					emp_no      INT             NOT NULL,
+     					<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					first_name  VARCHAR(14)     NOT NULL,
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					last_name   VARCHAR(16)     NOT NULL,
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					gender      ENUM ('M','F')  NOT NULL,
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					hire_date   DATE            NOT NULL,
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					PRIMARY KEY (emp_no)
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">);</li>
+     			</ul>
+     			<p>Which field is the primary key? Which fields are numbers? What’s <span style="text-decoration: underline">enum</span>*?</p>
+     		</section>
+     		<section>
+					<h3>Let's get to it</h3>
+					<img src="img/create-table-increment.png" alt="create-table-increment" width=800px>	
+				</section>
+
+				<section>
+					<h3>In PHPMYADMIN: STEP 1</h3>
+					<img src="img/phpmyadmin-step1.png" alt="phpmyadmin step 1" width=800px>	
+				</section>
+
+				<section>
+					<h3>In PHPMYADMIN: STEP 2</h3>
+					<img src="img/phpmyadmin-step2.png" alt="phpmyadmin step 2" width=800px>	
+				</section>
+
+				<section>
+					<h3>In PHPMYADMIN: STEP 3</h3>
+					<p>Congratulations, it’s a baby table! </p>
+					<img src="img/phpmyadmin-step3.png" alt="phpmyadmin step 3" width=800px>	
+				</section>
+
+				<section>
+					<h3>Now let's do some quick analysis</h3>			 
+					<ul style="list-style-type: none">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					select * from vicki. moviesample
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					select first_name from vicki. moviesample
+     					</li>
+     					<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					select count(*) from vicki.moviesample</li>
+     			</ul>
+     			<br><br>
+     			<p>What do we get?</p>
+     			<p>Nothing! because our table has no data. :(</p>
+     			<p>...yet</p>
+
+     		</section>
+
+     		<section>
+					<h3>To the SQL: Inserting data into a SQL table</h3>
+					<p>Now that we have the table set up, we can insert the values. Let’s load a row of data.</p>
+					<img src="img/insert-data.png" alt="insert data" width=800px>	
+				</section>
+
+				<section>
+					<h3>Adding data to tables</h3>
+					<img src="img/adding-data.png" alt="adding data" width=800px>	
+				</section>
+
+				<section>
+					<h3>Now let's check it..wahoo! We have rows!</h3>
+					<img src="img/we-have-rows.png" alt="we have rows" width=800px>	
+				</section>
+
+				<section>
+					<h3>How do we add the rest of the data?</h3>			 
+					<ul style="list-style-type: none">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					INSERT INTO vicki.movie_sample
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					(first_name, favorite_movie,
+     					<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					times_watched)
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					VALUES ('Vicki’, ‘Beauty and the
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					Beast’, ‘5’);
+     				</li>
+     				<br>
+     				<li style="background-color: LightSkyBlue; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					INSERT INTO vicki.movie_sample
+     				</li>
+     				<li style="background-color: LightSkyBlue ; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					(first_name, favorite_movie,
+     				</li>
+     				<li style="background-color: LightSkyBlue ; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     				<li style="background-color: LightSkyBlue ; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					times_watched)
+     				</li>
+     				<li style="background-color: LightSkyBlue ; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					VALUES ('Jasmine’, ‘Aladdin’,
+     				</li>
+     				<li style="background-color: LightSkyBlue ; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					‘456’);
+     				</li>
+     			</ul>
+     		</section>
+
+     		<section>
+					<h3>Break to enter the rest of the data into the table</h3>
+					<p>What kind of issues do you see arising from wrong data entry?</p>
+					<img src="https://media.giphy.com/media/vysUmffUa9o4g/giphy.gif" alt="Sheldon" width=700px>
+				</section>
+
+				<section>
+					<h3>There are much easier ways of getting data into tables</h3>
+					<ul>
+						<li>Bulk-loading ETL</li>
+						<li>Writing a script in Perl, Ruby, Python, or any other scripting language</li>
+						<li>Manipulating Excel to write your insert/update statements</li>
+					</ul>
+				</section>					
+
+				<section>
+					<h3>Our beautiful movie table!</h3>
+					<p>Let’s answer some exercises with SQL:</p>
+					<ul>
+						<li>What's the most popular movie?</li>
+							<ul style="list-style-type: none; max-width: 560px">
+	     				<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 16px;font-family: Courier; font-size: 18px;">
+	     					SELECT favorite_movie, COUNT(DISTINCT first_name)
+	     				</li>
+	     				<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 16px;font-family: Courier; font-size: 18px;">
+	     					FROM moviesample
+	     					<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 16px;font-family: Courier; font-size: 18px;">
+	     					GROUP BY favorite_movie
+	     				</li>
+	     				<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 16px;font-family: Courier; font-size: 18px;">
+	     					ORDER BY COUNT(DISTINCT first_name) DESC 
+	     				</li>
+     				</ul>
+						<li>What’s the most popular name this Saturday?</li>
+						<li>How many times was the most someone watched a movie?</li>
+						<li>How many movies have ‘The’ in the title?</li>
+						<li>How many people watched a favorite movie more than 3 times? </li>
+						
+					</ul>
+				</section>
+
+				<section>
+					<h3>Now, let's make another table</h3>
+					<p>We want to see which decade was more popular among GDI members. This one has the data for the movie name and the year it was made.</p>
+					<img src="img/another-table.png" alt="another table" width=800px>	
+				</section>
+
+				<section>
+					<h3>How do we add the rest of the data?</h3>			 
+					<ul style="list-style-type: none">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					select * from vicki.moviesample a
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					join vicki.year_released b</li>
+     					<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					on a.movie_title=b. movie_title
+     				</li>
+     			</ul>
+     			<br><br>
+     			<ul>
+     				<li>What happens when you have two fields with the same name in your select statement?</li>
+     				<li>What is movie title called in year_released (special role?) </li>
+     				<li>What would be a better field to join on?</li>
+     				<li>What’s the year with the most popular movies?</li>
+     				<li>And, what’s the decade with the most popular movies? 
+							Hint: Take the first three digits of the year</li>
+						<ul style="list-style-type: none;max-width: 600px">
+	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+	     					select left(year_released,3), count(*) from..
+	     				</li>
+     				</ul>
+     			</ul>
+     		</section>
+
+     		<section>
+					<h3><span style="background-color: OrangeRed; color:white">Deleting</span> SQL Values</h3>
+					<div style="font-size: 30px">
+					<p>What kind of issues do you see arising from wrong data entry?</p>
+					<p>This is the part where you have to be really careful. Most users won’t have access to delete tables.</p>
+					<p><span style="color: OrangeRed">truncate table;</span>  Leaves the table structure in tact, just deletes the values.  (deleting all values in a spreadsheet, keeping file)</p>
+					<br>
+					<p style="background-color: OrangeRed">drop table; Deletes EVERYTHING.  BADBADBAD. (file goes in the trash)</p>
+					</div>
+					<img src="https://s-media-cache-ak0.pinimg.com/originals/19/d2/0a/19d20a7c0bd91a4ffd16b84ed4b64ca2.jpg" alt="Grumpy Cat no" width=250px>
+				</section>
+
+				<section>
+					<h3>Dropping Rows Example</h3>
+					<p>Easy way in UI: The delete button. Be careful!</p>
+					<img src="img/dropping-rows.png" alt="dropping rows" width=700px>	
+					<ul style="list-style-type: none">
+						<li>SQL...more accurate.</li>
+	     			<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px">
+	     					delete from user1.moviesample
+	     				</li>
+	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+	     					where first_name=’Shrek’;
+     				</ul>
+				</section>
+
+				<section>
+					<h3>You can delete with any type of where statement</h3>			 
+					<ul style="list-style-type: none">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 30px;font-family: Courier; font-size: 30px;">
+     					delete from moviesample
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 30px;font-family: Courier; font-size: 30px;">
+     					where first_name like ’%S’;
+     					</li>
+     					<br>
+     					<li style="background-color: yellow; margin-bottom: 6px;line-height: 30px;font-family: Courier; font-size: 30px;">
+     					delete from moviesample</li>
+     					<li style="background-color: yellow; margin-bottom: 6px;line-height: 30px;font-family: Courier; font-size: 30px;">
+     					where times_watched >=’500’;</li>
+     			</ul>
+     		</section>
+     		<section>
+     			<h3>Altering the Table</h3>
+     			<ul style="list-style-type: none">
+     				<li>SELECT is to count things</li>
+     				<li>CREATE is to create a table</li>
+     				<li>DELETE is to erase</li>
+     				<li>ALTER is to fundamentally change a table:</li>
+     				<br>
+     				<ul>
+     					<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					alter table icecream drop column flavor;
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					alter table icecream add unique (quantity);</li>
+     					<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					alter table icecream modify flavor VARCHAR(35);
+     				</li>
+     				</ul>
+     			</ul>
+     			<br><br>
+     			<p>Try it now:</p>
+     			<ul style="list-style-type: none">
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					alter table vicki.moviesample add column year_released 
+     				</li>
+     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
+     					varchar(4) after times_watched;
+     					</li>
+     				</ul>
+     		</section>
+
+     		<section>
+     			<h3>Troubleshooting SQL Errors</h3>
+     			<ul>
+     				<li>You misspelled something</li>
+     				<li>Selection from table you don't have rights to</li>
+     				<li>Your group by statements don't have enough columns</li>
+     				<li>Query’s running too long</li>
+     				<li>Format for date/time doesn’t match</li>
+     				<li>You’re selecting from the wrong table in the schema</li>
+     				<li>Date type is the wrong type for a join</li>
+     				<li>You haven’t aliased your table</li>
+     			</ul>
+     		</section>
+
+     		<section>
+     			<h3>Best Practices</h3>
+     			<ul>
+     				<li>Limit your queries by timerange</li>
+     				<li>Only do joins on primary keys</li>
+     				<li>Profile your data beforehand</li>
+     				<li>Save your SQL queries for future use</li>
+     				<li>Be friends with your database people</li>
+     				<ul>
+     					<li>Write explain plans!</li>
+     				</ul>
+     			</ul>
+     		</section>
+
+     		<section>
+					<h3>A word about non-relational "big data"</h3>
+					<img src="img/big-data.png" alt="big-data" width=800px>	
+				</section>
+
+				<section>
+					<h3>The end!</h3>
+					<div>
+					<div class="left" style="max-width: 500px; margin: 30px">
+					<p>Here's what we've learned:</p>
+					<ul>
+						<li>Reading tables (c<span style="color: violet">R</span>ud)</li>
+						<ul>
+							<li>Basic SQL Logic</li>
+						</ul>
+						<li>Writing tables (<span style="color:violet:">C</span>r<span style="color:violet:">UD</span>)</li>
+						<ul>
+							<li>Basic deletes and updates</li>
+						</ul>
+						<li>Best practices for writing SQL and writing tables</li>
+					</ul>
+					</div>
+					<div class="left">
+						<img src="http://24.media.tumblr.com/fd3fc85a9043f8130b689ddf969ec4d9/tumblr_mhkk3shJT51qdinzbo1_500.gif" alt="Singing in the Rain" width=250px>
+					</div>
+					</div>
+					
+					<p style="clear:both;">Next steps: Set up some tables of your own, practice on these tables, become friends with DBAs, and become a SQL superstar.</p>	
+				</section>
+				<section>
+					<h3>More SQL Resources</h3>
+					<ul>
+						<li><a href="https://www.amazon.com/Head-First-SQL-Brain-Learners/dp/0596526849/ref=sr_1_1?ie=UTF8&qid=1489447805&sr=8-1&keywords=head+first+sql" target="_blank">Head First SQL</a> Good visual book</li>
+						<li><a href="http://sql.learncodethehardway.org/d-Way.html" target="_blank">Learn SQL The Hard Way</a> Highly recommended, and not hard at all</li>
+						<li><a href="http://www.codinghorror.com/blog/2007/10/a-visual-explanation-of-sql-joins.html" target="_blank">Visualizing SQL Joins</a> Great visual intro</li>
+						Good visual book</li>
+						<li><a href="http://stackoverflow.com/questions/tagged/sql?sort=frequent&pageSize=15" target="_blank">Popular SQL Questions</a> Highly recommended, and not hard at all</li>			
+					</ul>
+					<br><br>
+					<p>Practice, practice, practice! Upload your Excel spreadsheets.</p>
+					<ul>
+						<li>Sample<a href="https://launchpad.net/test-db" target="_blank">Practice Data Set</a> that we used in class</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>More SQL: Local Groups</h3>
+					<ul style="list-style-type: none; font-size: 30px">
+						<li>Philly DB <a href="http://www.meetup.com/PhillyDB/" target="_blank">http://www.meetup.com/PhillyDB/</a></li>
+						<li>Data Science Philly <a href="http://www.meetup.com/DataPhilly/" target="_blank">http://www.meetup.com/DataPhilly/</a></li>
+						<li>Philly Open Data <a href="http://www.meetup.com/Philly-Open-Data/" target="_blank">http://www.meetup.com/Philly-Open-Data/</a></li>
+						<li>Philly PostrgreSQL UG <a href="http://www.meetup.com/phlpug/" target="_blank">http://www.meetup.com/phlpug/</a></li>	
+					</ul>  
+				</section> 
+
+				<section>
+					<h3>GDI Class Feedback Survey Link</h3>
+					<p>Vicki Boykis vicki.boykis@gmail.com</p>
+					<p>vickiboykis.com | @vboykis</p>
+					<br><br>
+					 <a href="http://bit.ly/gdi-sql" target="_blank">http://bit.ly/gdi-sql</a>
+
+				</section>
+
+         <section>
 					<h2>Speaker View</h2>
 					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
 					<p>Press the <em>S</em> key to try it out.</p>
@@ -472,7 +2246,7 @@
 			</div>
   		<footer>
         <div class="copyright">
-          Official class name here -- Philadelphia --
+          Intro to SQL -- Philadelphia --
           <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
         </div>
       </footer>
