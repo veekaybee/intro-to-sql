@@ -1413,59 +1413,37 @@ ON a.movie_title=b. movie_title</pre></code>
 					<img src="img/dropping-rows.png" alt="dropping rows" width=700px>
 					<ul style="list-style-type: none">
 						<li>SQL...more accurate.</li>
-	     			<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px">
-	     					delete from user1.moviesample
-	     				</li>
+	     					<code>DELETE FROM user1.moviesample WHERE first_name=’Shrek’;</code>
+
 	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-	     					where first_name=’Shrek’;
+
      				</ul>
 				</section>
 
 				<section>
 					<h3>You can delete with any type of where statement</h3>
-					<ul style="list-style-type: none">
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 30px;font-family: Courier; font-size: 30px;">
-     					delete from moviesample
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 30px;font-family: Courier; font-size: 30px;">
-     					where first_name like ’%S’;
-     					</li>
-     					<br>
-     					<li style="background-color: yellow; margin-bottom: 6px;line-height: 30px;font-family: Courier; font-size: 30px;">
-     					delete from moviesample</li>
-     					<li style="background-color: yellow; margin-bottom: 6px;line-height: 30px;font-family: Courier; font-size: 30px;">
-     					where times_watched >=’500’;</li>
-     			</ul>
+<pre><code contenteditable class ="sql">DELETE FROM moviesample
+WHERE first_name like ’%S’;
+
+DELETE FROM moviesample</li>
+WHERE times_watched >=’500’;</li> </code></pre>
      		</section>
      		<section>
      			<h3>Altering the Table</h3>
      			<ul style="list-style-type: none">
-     				<li>SELECT is to count things</li>
-     				<li>CREATE is to create a table</li>
-     				<li>DELETE is to erase</li>
-     				<li>ALTER is to fundamentally change a table:</li>
+     				<li><code>SELECT</code> is to count things</li>
+     				<li><code>CREATE</code>is to create a table</li>
+     				<li><code>DELETE</code> is to erase</li>
+     				<li><code>ALTER</code> is to fundamentally change a table:</li>
      				<br>
      				<ul>
-     					<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					alter table icecream drop column flavor;
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					alter table icecream add unique (quantity);</li>
-     					<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					alter table icecream modify flavor VARCHAR(35);
-     				</li>
-     				</ul>
-     			</ul>
-     			<br><br>
+<pre><code contenteditable class ="sql">ALTER TABLE icecream DROP COLUMN flavor;
+ALTER TABLE icecream ADD unique (quantity);</li>
+ALTER TABLE icecream MODIFY flavor VARCHAR(35);</pre></code>
      			<p>Try it now:</p>
-     			<ul style="list-style-type: none">
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					alter table vicki.moviesample add column year_released
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					varchar(4) after times_watched;
-     					</li>
-     				</ul>
+<pre><code contenteditable class ="sql">ALTER TABLE vicki.moviesample ADD COLUMN year_released
+varchar(4) after times_watched;</pre></code>
+
      		</section>
 
      		<section>
