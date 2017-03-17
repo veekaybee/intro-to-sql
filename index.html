@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>girldevelopit-reveal.js - The GDI HTML Presentation Framework</title>
+		<title>Intro to SQL - Vicki Boykis</title>
 
 		<meta name="description" content="Girl Develop It framework for easily creating beautiful presentations using HTML in GDI theme. Forked from Hakim El Hattab's reveal.js">
 		<meta name="author" content="Girl Develop It">
@@ -50,12 +50,12 @@
 			<div class="slides">
         <!-- Opening -->
 				<section>
-					<h1>Intro To SQL</h1>
-                    <!-- <img src="img/circle-gdi-logo.png" alt="GDI Logo"/> -->
+					<h1>Intro to SQL</h1>
+          <img src="img/circle-gdi-logo.png" alt="GDI Logo"/>
 
 
 					<p>
-						<small><a href="http://vickiboykis.com">Vickiboykis.com</a> / <a href="http://twitter.com/vboykis">@vboykis</a></small>
+						<small>Vicki Boykis; <a href="http://vickiboykis.com">vickiboykis.com</a> / <a href="http://twitter.com/vboykis">@vboykis</a></small>
 					</p>
 				</section>
 
@@ -66,7 +66,7 @@
 	         <h3>Welcome!</h3>
 	         <div class="left-align">
 	            <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
-	            <p><a href="https://www.girldevelopit.com/code-of-conduct">Our code of conduct</a></p>
+	            <br><p><a href="https://www.girldevelopit.com/code-of-conduct">Our code of conduct</a></p>
 	            <p>Some rules</p>
 	            <ul>
 	                <li>We are here for you!</li>
@@ -220,11 +220,11 @@
 					<h3>What's SQL?</h3>
 					<div style="font-family:Courier;font-size: 24px;line-height: 24px">
 					<ul style="list-style-type: none">
-						<li><span style="background-color:lime">SELECT</span> user_name, sum(total_purchases)<li>
-						<li><span style="background-color:lime">FROM</span>  billing_database.user_table</li>
-						<li><span style="background-color:lime">WHERE</span> user_name like 'Henderson%'</li>
-						<li><span style="background-color:lime">AND</span> billing_month = 'January'</li>
-						<li><span style="background-color:lime">GROUP BY</span> user_name;</li>
+						<li><span style="background-color:orange">SELECT</span> user_name, sum(total_purchases)<li>
+						<li><span style="background-color:orange">FROM</span>  billing_database.user_table</li>
+						<li><span style="background-color:orange">WHERE</span> user_name like 'Henderson%'</li>
+						<li><span style="background-color:orange">AND</span> billing_month = 'January'</li>
+						<li><span style="background-color:orange">GROUP BY</span> user_name;</li>
 					</ul>
 					</div>
 					<br>
@@ -276,8 +276,8 @@
 						<img src="https://media3.giphy.com/media/8N5tQZ2X4byNi/200.webp#1" alt="guy giving horns" width=500px>
 
 						<ul>
-							<li><span style="background-color: violet">Reading</span> tables other people wrote</li><br>
-							<li><span style="background-color: violet">Modifying</span> those tables to add your own information/ creating your own tables to read from CSV files, other SQL tables, and other systems. </li><br>
+							<li><span style="background-color: orange">Reading</span> tables other people wrote</li><br>
+							<li><span style="background-color: orange">Modifying</span> those tables to add your own information/ creating your own tables to read from CSV files, other SQL tables, and other systems. </li><br>
 						</ul>
          </section>
 
@@ -307,7 +307,7 @@
 
          <section>
 	         	<h3>What can you do with SQL?</h3>
-	         	<p style="background-color: goldenrod">The power is in the relationship between data sets.</p><br>
+	         	<p style="background-color: orange">The power is in the relationship between data sets.</p><br>
 
 	         	<ul>
 	         		<li>How many customers do we have in Los Angeles?</li><br>
@@ -453,10 +453,10 @@
 
 
      		<section>
-     			<h3>Select * from different tables</h3>
+     			<h3>select * from different tables</h3>
      			<p>Try a couple of these:</p>
 						<pre>
-							<code contenteditable class ="sql"><p style="font-size: 24px">
+							<code contenteditable class ="sql">
 select * from employees.titles;
 select * from employees.dept_emp;
 select * from employees.salaries; </code>
@@ -468,48 +468,53 @@ select * from employees.salaries; </code>
      			<h3>Selecting specific columns</h3>
      			<p>Now let's try selecting only certain columns</p>
 					<pre>
-						<code contenteditable class ="sql"><p style="font-size: 24px">
-select title, emp_no from titles; </code>
+						<code contenteditable class ="sql">select title, emp_no from titles; </code>
 					 </pre>
+
+					 <p>A note about the semi-colon: The semicolon:  you don’t really need it,
+						depending on which flavor of SQL you’re using,
+						but it’s good practice in general to include it.
+						Like a period at the end of an English sentence.
      		</section>
 
+				<section>
+     			<h3>More specific columns. Let’s get to know our data. </h3>
+					<p style="text-align: left"> Selecting one column:</p>
+					<pre><code contenteditable class ="sql">SELECT department_name FROM employees.departments;</code></pre>
+					<p style="text-align: left"> Selecting multiple columns: </p>
+					<pre><code contenteditable class ="sql">SELECT emp_no, dept_no FROM employees.dept_emp;</code></pre>
+					<p style="text-align: left"> Selecting everything from one table with an alias for that table (will come in handy later):</p>
+					<pre><code contenteditable class ="sql">SELECT a.* FROM employees.salaries a;</code></pre>
+
+					</section>
+
+						<section>
+     			<h3>Distinct: selecting only unique instatnces of that column.</h3>
+					<pre><code contenteditable class ="sql">SELECT DISTINCT  title FROM employees.titles;</code></pre>
+					<center><table style="border-collapse:collapse;border-spacing:0;border-color:#aaa"><tr><th style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aaa;color:#333333;background-color:#3166ff;vertical-align:top">title</th></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aaa;color:#333;background-color:#fff;vertical-align:top">Senior Engineer</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aaa;color:#333;background-color:#fff;vertical-align:top">Staff</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aaa;color:#333;background-color:#fff;vertical-align:top">Engineer</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aaa;color:#333;background-color:#fff;vertical-align:top">Senior Staff</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aaa;color:#333;background-color:#fff;vertical-align:top">Assistant Engineer</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aaa;color:#333;background-color:#fff;vertical-align:top">Technique Leader</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aaa;color:#333;background-color:#fff;vertical-align:top">Manager</td></tr></table>     		</section>
+
+
      		<section>
-     			<h3>Now let's profile the data: (find out what we have)</h3>
-     			<p>Distinct: selecting only unique instatnces of that column.</p>
-     			<img src="img/distinct-result.png" alt="distinct result" width=400px>
+     			<h3>Difference between distinct and *</h3>
+
+     			<pre><code contenteditable class ="sql">SELECT COUNT(DISTINCT title) FROM employees.titles;
+7
+     				</code></pre>
+						<pre><code contenteditable class ="sql">SELECT COUNT(title) FROM employees.titles;
+443,308
+	     				</code></pre>
      		</section>
 
      		<section>
      			<h3>Difference between distinct and *</h3>
      			<p>Distinct: Selecting only unique instances</p>
-     			<ul style="list-style-type: none; font-family: Courier">
-     				<li style="background-color: yellow">
-     					select count(distinct title) from employees.titles;
-     				</li>
-     				<li>7</li>
-     				<br>
-     				<li style="background-color: yellow">
-     					select count(title) from employees.titles;
-     				</li>
-     				<li>443,308</li>
-     			</ul>
-     		</section>
+					<pre><code contenteditable class ="sql">SELECT COUNT(title) FROM employees.titles;
+433,308
+     				</code></pre>
+						<pre><code contenteditable class ="sql">SELECT COUNT(*) FROM employees.salaries;
+2,844,047
+	     				</code></pre>
 
-     		<section>
-     			<h3>Difference between distinct and *</h3>
-     			<p>Distinct: Selecting only unique instances</p>
-     			<ul style="list-style-type: none; font-family: Courier">
-     				<li style="background-color: yellow">
-     					select count(*) from employees.titles;
-     				</li>
-     				<li>433,308</li>
-     				<br>
-     				<li style="background-color: yellow">
-     					select count(*) from employees.salaries;
-     				</li>
-     				<li>2,844,047</li>
-     			</ul>
-     			<br>
      			<p>Which result set is bigger?</p>
      			<p>What is each one telling us?</p>
      		</section>
