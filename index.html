@@ -520,32 +520,28 @@ select * from employees.salaries; </code>
      		</section>
 
      		<section>
-     			<h3>Which table is the largest?</h3>
-     			<p>The largest table has the most records. Which table is the largest in our database?</p>
-     			<ul style="list-style-type: none; font-family: Courier; font-size: 24px;line-height: 24px">
-     				<li>
-     					select count(*) from employees.departments;
-     				</li>
-     				<li style="font-weight: 900">9</li>
-     				<br>
-     				<li>
-     					select count(*) from employees.dept_emp;
-     				</li>
-     				<li style="font-weight: 900">331,603</li>
-     				<br>
-     				<li>select count(*) from employees.dept_manager;</li>
-     				<li style="font-weight: 900">24</li>
-     				<br>
-     				<li>select count(*) from employees.employees;</li>
-     				<li style="font-weight: 900">300,024</li>
-     				<br>
-     				<li>select count (*) from employees.salaries;</li>
-     				<li style="font-weight: 900">2,844,047</li>
-     				<br>
-     				<li>select count (*) from employees.titles;</li>
-     				<li style="font-weight: 900">443,308</li>
-     			</ul>
-     			<br>
+     			<h3>Which table is the largest? <BR>(most records)</h3>
+
+					<pre><code contenteditable class ="sql">SELECT COUNT(*) from employees.departments;
+9
+     				</code></pre>
+						<pre><code contenteditable class ="sql">SELECT COUNT(*) FROM employees.dept_emp;
+331,603
+	     				</code></pre>
+							<pre><code contenteditable class ="sql">SELECT COUNT(*) FROM employees.dept_manager;
+24
+								</code></pre>
+								<pre><code contenteditable class ="sql">SELECT COUNT(*) FROM employees.employees;
+300,024
+									</code></pre>
+									<pre><code contenteditable class ="sql">SELECT COUNT(*) FROM employees.salaries;
+2,844,047
+										</code></pre>
+										<pre><code contenteditable class ="sql">SELECT COUNT(*) FROM employees.titles;
+443,308
+											</code></pre>
+
+
      		</section>
 
      		<section>
@@ -553,11 +549,7 @@ select * from employees.salaries; </code>
 					<p>SQL clauses: required order</p>
 					<div style="font-family:Courier;font-size: 24px;line-height: 24px; margin-left:250px">
 					<table style="width: 100%">
-						<tr>
-							<td> PROC SQL;</td>
 
-							<td>starts procedure</td>
-						</tr>
 						<tr>
 							<td>1 <span style="color:red">SELECT</span></td>
 
@@ -588,53 +580,39 @@ select * from employees.salaries; </code>
 
 							<td>sorts results</td>
 						</tr>
-						<tr>
-						<td>QUIT;</td>
 
-						<td>ends procedure</td>
-						</tr>
 					</table>
 					</div>
-					<br>
-					<p style="font-size:14px">From: http://blogs.sas.com/</p>
+
 
          </section>
 
          <section>
-         	<h3>Now let's get fancy with group statements</h3>
+         	<h3>Now let's group stuff!</h3>
+					<pre><code contenteditable class ="sql">
+			SELECT type_of_dog,COUNT(*)
+			FROM animals.total_dogs
+			GROUP BY type_of_dog;
+     				</pre></code>
          	<p>Group statements corral data together into categories when we want to count things by groups of things</p>
          	<p>i.e. How many total dogs vs puppies vs parents.</p>
-         	<img src="img/dog-moms.png" alt="Select Columns" width=350px/>
+         	<img src="img/dog-moms.png" alt="Pups" >
          	<br>
-         	<ul style="list-style-type: none; font-family: Courier; font-size: 24px; text-align: left">
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
-     					SELECT type_of_dog,count(*);
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
-     					FROM animals.total_dogs;
-     				</li><li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
-     					GROUP BY type_of_dog;
-     				</li>
+
      			</ul>
          </section>
 
          <section>
-         	<h3>Counting Titles and Salaries</h3>
-         	<ul style="list-style-type: none; font-family: Courier; font-size: 24px; ">
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
-     					select title, count(*) from
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
-     					employees.titles
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
-     					group by title;
-     				</li>
-     			</ul>
+         	<h3>Counting titles and salaries</h3>
+					What is this telling us?
+     		How many instances of that title are there in the table?
+					<pre><code contenteditable class ="sql">SELECT title, COUNT(*) FROM employees.titles
+GROUP by title;
+     				</pre></code>
+
      			<br>
-     			<img src="img/titles-and-salaries.png" alt="Select Columns" width=250px/>
-     			<p>What is this telling us?</p>
-     			<p>How many instances of that title are there in the table?</p>
+     			<img src="img/titles-and-salaries.png" alt="Select Columns" />
+
          </section>
 
          <section>
