@@ -49,6 +49,16 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
         <!-- Opening -->
+
+				<section>
+					 <p>wifi: network</p>
+					 <p>password: password</p>
+					 <h4><br />Early?</h4>
+					 <ul>
+							 <li>any prep instructions</li>
+					 </ul>
+			 </section>
+
 				<section>
 					<h1>Intro to SQL</h1>
           <img src="img/circle-gdi-logo.png" alt="GDI Logo"/>
@@ -464,6 +474,11 @@ select * from employees.salaries; </code>
 			   			<p>and check out the tables and info.
      		</section>
 
+				<section>
+            <h2>Stretch break!</h2>
+            <img src="img/cat_stretch.jpg" alt="kitty!" />
+        </section>
+
      		<section>
      			<h3>Selecting specific columns</h3>
      			<p>Now let's try selecting only certain columns</p>
@@ -617,22 +632,17 @@ GROUP by title;
 
          <section>
          	<h3>More group by examples</h3>
-         	<ul style="list-style-type: none; font-family: Courier; font-size: 24px; ">
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
-     					select dept_name, count(*) from departments
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
-     					group by dept_name;
-     				</li>
-     			</ul>
+					<pre><code contenteditable class ="sql">SELECT dept_name, COUNT(*) FROM departments
+GROUP BY dept_name;
+						</pre></code>
      			<br>
      			<img src="img/more-group-by-examples.png" alt="Select Columns" width=250px/>
      			<p>How many instances of that department are there in that table?</p>
          </section>
 
          <section>
-         	<h3>Group by more than one item</h3>
-         	<img src="img/group-by-more-than-one-item.png" alt="Group by More than One Item" width=800px/>
+         	<h3>Group by more than one item: making smaller groups</h3>
+         	<img src="img/group-by-more-than-one-item.png" alt="Group by More than One Item" >
          </section>
 
          <section>
@@ -1781,400 +1791,31 @@ GROUP by title;
 						<img src="http://24.media.tumblr.com/fd3fc85a9043f8130b689ddf969ec4d9/tumblr_mhkk3shJT51qdinzbo1_500.gif" alt="Singing in the Rain" width=250px>
 					</div>
 					</div>
-
-					<p style="clear:both;">Next steps: Set up some tables of your own, practice on these tables, become friends with DBAs, and become a SQL superstar.</p>
-				</section>
-				<section>
-					<h3>More SQL Resources</h3>
-					<ul>
-						<li><a href="https://www.amazon.com/Head-First-SQL-Brain-Learners/dp/0596526849/ref=sr_1_1?ie=UTF8&qid=1489447805&sr=8-1&keywords=head+first+sql" target="_blank">Head First SQL</a> Good visual book</li>
-						<li><a href="http://sql.learncodethehardway.org/d-Way.html" target="_blank">Learn SQL The Hard Way</a> Highly recommended, and not hard at all</li>
-						<li><a href="http://www.codinghorror.com/blog/2007/10/a-visual-explanation-of-sql-joins.html" target="_blank">Visualizing SQL Joins</a> Great visual intro</li>
-						Good visual book</li>
-						<li><a href="http://stackoverflow.com/questions/tagged/sql?sort=frequent&pageSize=15" target="_blank">Popular SQL Questions</a> Highly recommended, and not hard at all</li>
-					</ul>
-					<br><br>
-					<p>Practice, practice, practice! Upload your Excel spreadsheets.</p>
-					<ul>
-						<li>Sample<a href="https://launchpad.net/test-db" target="_blank">Practice Data Set</a> that we used in class</li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>More SQL: Local Groups</h3>
-					<ul style="list-style-type: none; font-size: 30px">
-						<li>Philly DB <a href="http://www.meetup.com/PhillyDB/" target="_blank">http://www.meetup.com/PhillyDB/</a></li>
-						<li>Data Science Philly <a href="http://www.meetup.com/DataPhilly/" target="_blank">http://www.meetup.com/DataPhilly/</a></li>
-						<li>Philly Open Data <a href="http://www.meetup.com/Philly-Open-Data/" target="_blank">http://www.meetup.com/Philly-Open-Data/</a></li>
-						<li>Philly PostrgreSQL UG <a href="http://www.meetup.com/phlpug/" target="_blank">http://www.meetup.com/phlpug/</a></li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>GDI Class Feedback Survey Link</h3>
-					<p>Vicki Boykis vicki.boykis@gmail.com</p>
-					<p>vickiboykis.com | @vboykis</p>
-					<br><br>
-					 <a href="http://bit.ly/gdi-sql" target="_blank">http://bit.ly/gdi-sql</a>
-
-				</section>
-
-         <section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-                    <p>P.S. This won't work when running the slides locally unless you run reveal.js runs from a local web server.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<!-- Examples of code slides-->
-				<section>
-					  <h2>But wait! We teach code</h2>
-					  <p>For HTML -- Surround your code with a div class "xml", then pre, then code.</p>
-           <pre>
-            <code>
-              &lt;ul>
-                &lt;li>No order here&lt;/li>
-                &lt;li>Or here&lt;/li>
-                &lt;li>Or here&lt;/li>
-                &lt;li>Or here&lt;/li>
-              &lt;/ul&gt;
-            </code>
-          </pre>
-				</section>
-
-				<section>
-					  <h2>But wait! We teach code</h2>
-					  <p>We can also make code editable</p>
-					  <pre>
-					    <code contenteditable>
-                &lt;ul>
-                  &lt;li>No order here&lt;/li>
-                  &lt;li>Or here&lt;/li>
-                  &lt;li>Or here&lt;/li>
-                  &lt;li>Or here&lt;/li>
-                &lt;/ul&gt;
-              </code>
-
-            </pre>
 				</section>
 
 
-				<section>
-					  <h2>But wait! We teach code</h2>
-					  <p>CSS</p>
-					  <pre>
-              <code contenteditable class ="css">
-                body{
-                  background-color: #ffffff;
-                }
-              </code>
-            </pre>
-				</section>
-
-				<section>
-					  <h2>But wait! We teach code</h2>
-					  <p>Javascript</p>
-					  <pre>
-              <code contenteditable class ="javascript">
-                function helloWorld(){
-                  var name = 'GDI';
-                  alert("Hi, " + name)
-                }
-              </code>
-            </pre>
-				</section>
-
-				<section>
-					  <h2>But wait! We teach code</h2>
-					  <p>PHP</p>
-					  <pre>
-              <code contenteditable class ="php">
-                function helloWorld(){
-                  $name = 'GDI';
-                  echo "Hi, " . $name;
-                }
-              </code>
-            </pre>
-				</section>
-
-				<section>
-					  <h2>But wait! We teach code</h2>
-					  <p>Ruby</p>
-					  <pre>
-              <code contenteditable class ="ruby">
-                def hello_world
-                  @name = 'GDI'
-                  puts "Hi, #{@name}"
-                end
-              </code>
-            </pre>
-				</section>
-
-         <section>
- 					  <h2>But wait! We teach code</h2>
- 					  <p>Python</p>
- 					  <pre>
-               <code contenteditable class ="python">
-                 def hello_world():
-                   name = "GDI"
-                   print 'Hi, ' + name
-                   return
-               </code>
-             </pre>
- 				</section>
-
- 				 <section>
- 					  <h2>But wait! We teach code</h2>
- 					  <p>Java</p>
- 					  <pre>
-               <code contenteditable class ="java">
-                public void helloWorld(){
-                  String name = "GDI";
-                  System.out.println("Hi," + name)
-                }
-               </code>
-             </pre>
- 				</section>
 
 
-        <!-- Elements entering one at a time-->
-        <section>
-					<section>
-						<h2>Fragmented Views</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<ol>
-							<li class="fragment"><code>any type</code></li>
-							<li class="fragment"><em>of view</em></li>
-							<li class="fragment"><strong>fragments</strong></li>
-						</ol>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's a few styles of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-green">highlight-green</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#/14/1">down</a>.
-						</p>
-						<a href="#/14/1" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-						<a href="#/14/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-  						<a href="#/14" class="image">
-  							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<a href="#/14/3" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-  						<a href="#/14/1" class="image">
-  							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/14" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
 
 
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview. Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>rvl.io</h2>
-					<p>
-						You know, we are nerds after all and will probably get a kick out of all of this HTML. BUT, if you really don't like writing slides in HTML you can use the online editor <a href="http://www.rvl.io" target="_blank">rvl.io</a>.
-					</p>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-            <a href="?theme=gdicool#/themes">GDI Cool</a> -
-            <a href="?theme=gdilight#/themes">GDI Light</a> -
-            <a href="?theme=gdisunny#/themes">GDI Sunny</a> -
-            <a href="?theme=gdidefault#/themes">Default</a>
-					</p>
-					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						The nice thing about standards is that there are so many to choose from</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.
-					</blockquote>
-				</section>
-
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/1">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen
-						during a presentation.
-					</p>
-				</section>
-
-
-                <!-- Class begins -->
-				<section>
-					<h1>GDI Philly</h1>
-					<h3>Starter Slides</h3>
-				</section>
-                 <section>
-                    <p>wifi: network</p>
-                    <p>password: password</p>
-                    <h4><br />Early?</h4>
-                    <ul>
-                        <li>any prep instructions</li>
-                    </ul>
-                </section>
-                <section>
-                    <h3>Welcome!</h3>
-                    <div class="left-align">
-                        <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
-                        <p><a href="https://www.girldevelopit.com/code-of-conduct">Our code of conduct</a></p>
-                        <p>Some "rules"</p>
-                        <ul>
-                            <li>We are here for you!</li>
-                            <li>Every question is important</li>
-                            <li>Help each other</li>
-                            <li>Have fun</li>
-                        </ul>
-                    </div>
-                </section>
-                <section>
-                    <h3>GDI Philly is now on Slack!</h3>
-                    <div class="left-align">
-                        <p>Slack is a free, chat and messaging system available as either a web or native application for your desktop or mobile device. All our welcome to join our Slack team, but we need to add you! For an invitation, <a href="http://goo.gl/forms/Qk1hqLxXtU" target="_blank">sign up here</a>.</p>
-                        <h4><br />Join #[slack-room-name] to slack about this class!</h4>
-                    </div>
-                </section>
-                <section>
-                    <h3>Introduce yourself</h3>
-                    <ul>
-                        <li>Who are you?</li>
-                        <li>What do you hope to get out of this class?</li>
-                        <li>[Fun introductory question here. Make it inclusive!]</li>
-                    </ul>
-                </section>
-                <!-- Class content goes here -->
-                <section>
-                    <h3>Let's Develop It</h3>
-                    <p>Task instructions might go here</p>
-                    <p><span class="green">BONUS</span>: Finished early? Try this.</p>
-                    <pre class="fragment"><code contenteditable class="javascript">
-    Code solution might go here
-                    </code></pre>
-                </section>
-                <section>
-                    <h2>Stretch break!</h2>
-                    <img src="img/cat_stretch.jpg" alt="kitty!" />
-                </section>
                 <!-- End of class -->
-                <section>
-                    <h3>Summary</h3>
-                    <ul>
-                        <li>Intro</li>
-                        <li>Exercise</li>
-                        <li>Stretch break</li>
-                        <li>Wrap up</li>
-                    </ul>
-                </section>
-                <section>
-                    <h3>Homework (optional)</h3>
-                    <ol>
-                        <li>Describe a next-level homework task for students to tackle</li>
-                        <li>Be sure to include solutions to this and all exercises, including bonus items.</li>
-                    </ol>
-                    <p><br />Don't feel you need to finish this right away! Check into #[slack-room-name] for follow-up and questions.</p>
-                </section>
-                <section>
-                    <h3>What next?</h3>
-                    <ol>
-                        <li><a href="http://www.meetup.com/Girl-Develop-It-Philadelphia/pages/Suggested_Course_Sequences/" target="_blank">Suggested class sequences</a></li>
-                        <li>Valuable resources</li>
-                        <li>Other upcoming GDI classes/events</li>
-			<li>Write about your class experience, and send us a link! We can share to the Philly community, and maybe GDI national.</li>
-                    </ol>
-                </section>
+
+
+							<section>
+								<h3>More SQL Resources</h3>
+								<ul>
+									<li><a href="https://www.amazon.com/Head-First-SQL-Brain-Learners/dp/0596526849/ref=sr_1_1?ie=UTF8&qid=1489447805&sr=8-1&keywords=head+first+sql" target="_blank">Head First SQL</a> Good visual book</li>
+									<li><a href="http://sql.learncodethehardway.org/d-Way.html" target="_blank">Learn SQL The Hard Way</a> Highly recommended, and not hard at all</li>
+									<li><a href="http://www.codinghorror.com/blog/2007/10/a-visual-explanation-of-sql-joins.html" target="_blank">Visualizing SQL Joins</a> Great visual intro</li>
+									Good visual book</li>
+									<li><a href="http://stackoverflow.com/questions/tagged/sql?sort=frequent&pageSize=15" target="_blank">Popular SQL Questions</a> Highly recommended, and not hard at all</li>
+								</ul>
+								<br><br>
+								<p>Practice, practice, practice! Upload your Excel spreadsheets.</p>
+								<ul>
+									<li>Sample<a href="https://launchpad.net/test-db" target="_blank">Practice Data Set</a> that we used in class</li>
+								</ul>
+							</section>
                 <section>
                     <h3>Get Involved</h3>
                     <ol>
@@ -2185,10 +1826,23 @@ GROUP by title;
                     </ol>
                     <p><a href="http://www.meetup.com/Girl-Develop-It-Philadelphia/pages/Get_Involved/" target="_blank">All forms here</a></p>
                 </section>
-                <section>
+
+								<section>
+									<h3>More SQL: Local Groups</h3>
+									<ul style="list-style-type: none; font-size: 30px">
+										<li>Philly DB <a href="http://www.meetup.com/PhillyDB/" target="_blank">http://www.meetup.com/PhillyDB/</a></li>
+										<li>Data Science Philly <a href="http://www.meetup.com/DataPhilly/" target="_blank">http://www.meetup.com/DataPhilly/</a></li>
+										<li>Philly Open Data <a href="http://www.meetup.com/Philly-Open-Data/" target="_blank">http://www.meetup.com/Philly-Open-Data/</a></li>
+										<li>Philly PostrgreSQL UG <a href="http://www.meetup.com/phlpug/" target="_blank">http://www.meetup.com/phlpug/</a></li>
+									</ul>
+								</section>
+
+								<section>
                     <h3>Survey</h3>
                     <p>We value your feedback and are always trying to improve.</p>
-                    <p><a href="" target="_blank">survey link here</a></p>
+										<p>Vicki Boykis vicki.boykis@gmail.com</p>
+										<p>vickiboykis.com | @vboykis</p>
+                     <p><a href="http://bit.ly/gdi-sql" target="_blank">http://bit.ly/gdi-sql</a></p>
                 </section>
 			</div>
   		<footer>
