@@ -328,8 +328,7 @@
          </section>
 
          <section>
-						<h3>Three parts of SQL</h3>
-						<p>SQL clauses: required order</p>
+						<h3>SQL clauses: required order</h3>
 						<div style="font-family:Courier;font-size: 24px;line-height: 24px; margin-left:250px">
 						<table style="width: 100%">
 							<tr>
@@ -452,10 +451,7 @@
 			   <section>
      			<h3>Let's run our first query!</h3>
 					<h6> Go to the SQL tab and type in:</h6>
-					<pre>
-						 <code contenteditable class ="sql"> select * from employees.employees; </code>
-					 </pre>
-
+					<pre><code contenteditable class ="sql">SELECT * FROM employees.employees; </code></pre>
 						<img src="img/select-star.png" alt="select-star">
 						<p style="background-color: orange;font-size: 24px">Type out all the SQL you write. It’ll be easier to learn.</p>
      		</section>
@@ -566,12 +562,12 @@ select * from employees.salaries; </code>
 					<table style="width: 100%">
 
 						<tr>
-							<td>1 <span style="color:red">SELECT</span></td>
+							<td>1 SELECT</td>
 
 							<td>selects variables</td>
 						</tr>
 						<tr>
-							<td>2 <span style="color:red">FROM</span></td>
+							<td>2 FROM</td>
 
 							<td>opens datasets</td>
 						</tr>
@@ -581,7 +577,7 @@ select * from employees.salaries; </code>
 							<td>restricts observations</td>
 						</tr>
 						<tr>
-							<td>4 GROUP BY</td>
+							<td><span style="color:red">4 GROUP BY</span></td>
 
 							<td>groups observations</td>
 						</tr>
@@ -646,175 +642,92 @@ GROUP BY dept_name;
          </section>
 
          <section>
-         	<h4>Let's try some exercises that combine count (*), distinct and group by</h4>
-	         <p>How many unique salaries does each employee have? (that is how many times have they been given raises?)</p>
-	         <ul style="list-style-type: none; font-family: Courier; font-size: 24px; ">
-	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
-	     					select emp_no, count(distinct salary)
-	     				</li>
-	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
-	     					from salaries
-	     				</li>
-	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
-	     					group by emp_no;
-	     				</li>
-	     			</ul>
-	     			<br><br>
-	     			<p>How many managers has each department had?</p>
-	         <ul style="list-style-type: none; font-family: Courier; font-size: 24px; ">
-	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
-	     					select dept_no, count(emp_no) from dept_manager
-	     				</li>
-	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
-	     					group by dept_no;
-	     				</li>
-	     			</ul>
-	     			<br><br>
-	     			<p>How many people that were born on the same day, have the same first name, and same gender are there that work for this company?</p>
-	         <ul style="list-style-type: none; font-family: Courier; font-size: 24px; ">
-	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
-	     					select birth_date,first_name,gender, count(*) from
-	     				</li>
-	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
-	     					employees group by birth_date, first_name, gender;
-	     				</li>
-	     			</ul>
-     			<br>
+         	<h4>Let's try some exercises that combine COUNT(*), DISTINCT and GROUP BY</h4>
+	         <h6>How many unique salaries does each employee have? (how many times have they been given raises?)</h6>
+	         <pre><code contenteditable class ="sql">SELECT emp_no, COUNT(DISTINCT salary)
+FROM salaries
+GROUP BY emp_no;
+</pre></code>
+
+	     			<h6>How many managers has each department had?</h6>
+	         <pre><code contenteditable class ="sql">SELECT dept_no, COUNT(emp_no) FROM dept_manager
+GROUP BY dept_no;
+</pre></code>
+
+	     			<h6>How many people that were born on the same day, have the same first name, and same gender?</h6>
+	         <pre><code contenteditable class ="sql">SELECT birth_date,first_name,gender, COUNT(*) FROM employees
+GROUP BY birth_date, first_name, gender;</pre></code>
          </section>
 
          <section>
-	         	<h3>Another kind of group by: maximum and minimum</h3>
+	         	<h3>Another kind of group-by: <br>maximum and minimum</h3>
 	         <p>When was your youngest employee born?</p>
-	         <ul style="list-style-type: none">
-	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
-	     					select max(birth_date) from employees;
-	     				</li>
-	     				<li style="background-color: lime;font-size: 20px;line-height: 24px">
-	     					In this case, you don’t need the group-by statement since you’re not counting groups of people, but looking at the whole table
-	     				</li>
-	     				</ul>
-	     			<br><br>
-	     			<p>When was your youngest male employee born?</p>
-	         <ul style="list-style-type: none; font-family: Courier; font-size: 24px; ">
-	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
-	     					select gender, min(birth_date)
-	     				</li>
-	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
-	     					from employees
-	     				</li>
-	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
-	     					group by gender;
-	     				</li>
-	     			</ul>
+	<pre><code contenteditable class ="sql"> SELECT MAX(birth_date) FROM employees;</pre></code>
+
+<div align="left"><p style="background-color: orange;font-size: 24px">In this case, you don’t need the group-by statement since you’re not counting groups of people, but looking at the whole table</p></div>
+
+<br>
+	     			<p>When was your youngest female employee born?</p>
+	     					<pre><code contenteditable class ="sql">SELECT gender, MIN(birth_date) FROM employees
+GROUP BY gender;</pre></code>
+
          </section>
 
          <section>
-         	<h3>Order by: Sorts by terms you want</h3>
+         	<h3>Order by: Sorts by the terms you want</h3>
 
-         <ul style="list-style-type: none; font-family: Courier; font-size: 20px; ">
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
-     					SELECT first_name, gender, count( * )
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
-     					from employees
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
-     					GROUP BY first_name, gender
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
-     					order by first_name;
-     				</li>
-     			</ul>
-     			<p style="font-size: 26px">Will sort by first name ascending, unless you specify desc.</p>
+<p style="background-color: orange;font-size: 24px">Will sort by first name ascending, unless you specify desc.</p>
+<pre><code contenteditable class ="sql">
+SELECT first_name, gender, COUNT(*)
+FROM employees
+GROUP BY first_name, gender
+ORDER BY first_name;
 
-         <ul style="list-style-type: none; font-family: Courier; font-size: 20px; ">
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
-     					SELECT first_name, gender, count( * )
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
-     					from employees
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
-     					GROUP BY first_name, gender
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
-     					order by first_name <span style="font-weight: 900">desc;</span>
-     				</li>
-     			</ul>
-     			<br><br>
-     			<p style="font-size: 26px">Ordering by more than one column, will sort by the first, then by the second, ascending</p>
-         <ul style="list-style-type: none; font-family: Courier; font-size: 20px; ">
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
-     					sselect gender, birth_date from employees
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
-     					order by gender, birth_date;
-     				</li>
-     			</ul>
-     			<br><br>
-     			<p style="font-size: 26px">Order by count(*) of your table</p>
-         <ul style="list-style-type: none; font-family: Courier; font-size: 20px; ">
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px">
-     					SELECT first_name, gender, count( * )
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
-     					from employees
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
-     					GROUP BY first_name, gender
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 20px">
-     					ORDER BY COUNT( * ) DESC
-     				</li>
-     			</ul>
+SELECT first_name, gender, COUNT(*)
+FROM employees
+GROUP BY first_name, gender
+order by first_name DESC;
+</pre></code>
+
+<p style="background-color: orange;font-size: 24px">Ordering by more than one column, will sort by the first, then by the second, ascending</p>
+<pre><code contenteditable class ="sql">
+SELECT gender, birth_date FROM employees
+ORDER BY gender, birth_date;
+</pre></code>
+
          </section>
 
          <section>
          	<h3>Order by exercises</h3>
-         	<p style="font-size: 22px">Order by a number ascending</p>
-         	<ul style="list-style-type: none">
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
-     					select emp_no, salary from salaries
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
-     					order by salary asc;
-     				</li>
-     			</ul>
-     			<br><br>
-     			<p>Order by a number descending</p>
-         	<ul style="list-style-type: none">
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
-     					select emp_no, salary from salaries
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
-     					order by emp_no desc;
-     				</li>
-     			</ul>
-         </section>
+         	<p style="font-size: 24px">Order by a number ascending</p>
+<pre><code contenteditable class ="sql">SELECT emp_no, salary FROM salaries
+ORDER BY salary ASC;
+</pre></code>
+
+<p style="font-size: 24px">Order by a number descending</p>
+<p style="background-color: orange;font-size: 24px">
+	<pre><code contenteditable class ="sql">SELECT emp_no, salary FROM salaries
+ORDER BY salary DESC;
+</pre></code>
+</section>
 
 
      		<section>
-					<h3>Three parts of SQL</h3>
-					<p>SQL clauses: required order</p>
+					<h3>SQL clauses: required order</h3>
 					<div style="font-family:Courier;font-size: 24px;line-height: 24px; margin-left:250px">
 					<table style="width: 100%">
 						<tr>
-							<td> PROC SQL;</td>
-
-							<td>starts procedure</td>
-						</tr>
-						<tr>
-							<td>1 <span style="color:red">SELECT</span></td>
+							<td>1 SELECT</span></td>
 
 							<td>selects variables</td>
 						</tr>
 						<tr>
-							<td>2 <span style="color:red">FROM</span></td>
+							<td>2 FROM</td>
 
 							<td>opens datasets</td>
 						</tr>
 						<tr>
-							<td>3 WHERE</td>
+							<td><span style="color:red">3 WHERE</span></td>
 
 							<td>restricts observations</td>
 						</tr>
@@ -834,14 +747,11 @@ GROUP BY dept_name;
 							<td>sorts results</td>
 						</tr>
 						<tr>
-						<td>QUIT;</td>
 
-						<td>ends procedure</td>
 						</tr>
 					</table>
 					</div>
 					<br>
-					<p style="font-size:14px">From: http://blogs.sas.com/</p>
          </section>
 
          <section>
