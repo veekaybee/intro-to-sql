@@ -756,47 +756,26 @@ ORDER BY salary DESC;
 
          <section>
          	<h3>Where Clause: Like a Filter</h3>
-         	<p>You only want to select certain things. (Excel filters)</p>
-         	<ul style="list-style-type: none">
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
-     					SELECT first_name, gender, count(*)
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
-     					FROM employees
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
-     					where first_name=’Adam’
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
-     					GROUP BY first_name, gender;
-     				</li>
-     			</ul>
-     			<br><br>
-     				<img src="img/where-clause.png" alt="Group by More than One Item" width=400px/>
-         </section>
+         	<p>You only want to select certain things.</p>
+<pre><code contenteditable class ="sql">SELECT first_name, gender, COUNT(*)
+FROM employees
+WHERE first_name=’Adam’
+GROUP BY first_name, gender;</pre></code>
+
+<table style="border-collapse:collapse;border-spacing:0"><tr><th style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top">first_name</th><th style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top">gender</th><th style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top">COUNT(*)</th></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top">Adam</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top">M</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top">164</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top">Adam</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top">F</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top">87</td></tr></table>
+ </section>
 
          <section>
-		         	<h3>Really useful with 'like' statements</h3>
-		         	<p style="font-size: 32px">“Like” will pick up anything similar to what you entered.</p>
-		         	<ul style="list-style-type: none">
-		     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
-		     					SELECT last_name, count( * )
-		     				</li>
-		     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
-		     					FROM employees
-		     				</li>
-		     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
-		     					WHERE last_name LIKE "S%"
-		     				</li>
-		     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
-		     					GROUP BY last_name;
-		     				</li>
-		     			</ul>
-		     			<img src="img/like.png" alt="Group by More than One Item" width=200px/>
-		     			<div style="font-size: 26px;line-height: 26px">
-		     				<ul style="list-style-type: none">
-		     				<br>
-		     				<li>Exercises:</li>
+		         	<h3>Like statements are really useful in where clauses</h3>
+
+	<p style="font-size: 32px">“Like” will pick up anything similar to what you entered.</p>
+<pre><code contenteditable class ="sql">SELECT last_name, COUNT( * )
+FROM employees
+WHERE last_name LIKE "S%"
+GROUP BY last_name;</pre></code>
+
+						<div>
+		     				Exercises:
 		     				<ul>
 		     					<li>What happens when you search in all caps?</li>
 		     					<li>What happens when you do last_name = “S%”</li>
@@ -813,78 +792,23 @@ ORDER BY salary DESC;
          <section>
          	<h3>Where clause exercises</h3>
          	<p>Only all the females</p>
-         	<ul style="list-style-type: none">
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
-     					select * from employees
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
-     					where gender=’F’;
-     				</li>
-     				<li style="font-size: 20px">*What happens if you don't include the quotation marks?</li>
-     			</ul>
-     			<br><br>
-     			<p>Only all of the engineers</p>
-         	<ul style="list-style-type: none">
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
-     					SELECT * FROM titles
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
-     					WHERE title LIKE '%Engineer%';
-     				</li>
-     			</ul>
+<pre><code contenteditable class ="sql"> SELECT * FROM employees
+WHERE gender=’F’;</pre></code>
+	<p>Only all of the engineers</p>
+<pre><code contenteditable class ="sql">SELECT * FROM titles
+WHERE title LIKE '%Engineer%';</pre></code>
+
          </section>
 
          <section>
          	<h3>A couple of things to note about greater/less than/equal to</h3>
 
-         	<ul style="list-style-type: none">
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
-     					where number >='5';
-     				</li>
-     				<ul style="list-style-type: none">
-	     				<li style="font-family: Courier; font-size: 24px;">
-	     					brings back (5,6,7,8...)
-	     				</li>
-     				</ul>
+<pre><code contenteditable class ="sql"> WHERE number >='5'; --returns (5,6,7,8...)</pre></code>
+<pre><code contenteditable class ="sql"> WHERE number > '5'; --returns (6,7,8...)</pre></code>
+<pre><code contenteditable class ="sql"> WHERE day <= ‘1-Jan-2017’; --returns (Jan 1, Dec. 31, Dec. 30…)</pre></code>
+<pre><code contenteditable class ="sql"> WHERE day < ‘1-Jan-2017’; --returns (Dec. 31, Dec. 30…)</pre></code>
+<pre><code contenteditable class ="sql"> WHERE day != ‘1-Jan-2017’; --returns anything other than Jan 1</pre></code>
 
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
-     					where number > '5';
-     				</li>
-     				<ul style="list-style-type: none">
-	     				<li style="font-family: Courier; font-size: 24px;">
-	     					brings back (6,7,8...)
-	     				</li>
-     				</ul>
-
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
-     					where day <= ‘1-jan-2017’
-     				</li>
-     				<ul style="list-style-type: none">
-	     				<li style="font-family: Courier; font-size: 24px;">
-	     					brings back: (Jan 1, Dec. 31, Dec. 30…)
-
-	     				</li>
-     				</ul>
-
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
-     					where day < ‘1-jan-2017’
-     				</li>
-     				<ul style="list-style-type: none">
-	     				<li style="font-family: Courier; font-size: 24px;">
-	     					brings back:  (Dec. 31, Dec. 30…)
-	     				</li>
-     				</ul>
-
-						<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 24px;">
-
-						where != ‘1-Jan-2017’
-     				</li>
-     				<ul style="list-style-type: none">
-	     				<li style="font-family: Courier; font-size: 24px;">
-	     					brings back anything other than Jan 1
-	     				</li>
-     				</ul>
-     			</ul>
          </section>
 
          <section>
@@ -893,56 +817,64 @@ ORDER BY salary DESC;
          	<img src="img/join-guys.png" alt="Group by More than One Item" width=600px/>
          </section>
 
-         <section>
 
-					<h3>Plan for the day: CRUD</h3>
-					<div style="max-width: 500px; font-size: 20px; margin: 20px" class="left">
-					<h3 style="color: black">Morning (10-12): c<span style="color: violet">R</span>ud </h3>
-					<ul>
-						<li>What's a database? What's SQL?</li>
-						<li>How to query a database:</li>
-						<ul>
-							<li style="list-style-type: circle">Select statement (from statement)</li>
-							<ul style="list-style-type: square">
-								<li>Select, Distinct</li>
-								<li>Count</li>
-							</ul>
-							<li style="list-style-type: circle">Group By, Order By</li>
-							<li style="list-style-type: circle">Clauses</li>
-								<ul style="list-style-type: square">
-									<li>Where</li>
-									<li>Like</li>
-								</ul>
-								<li style="list-style-type: circle">Joins(Inner/Outer Left/Right)</li>
-								<li style="list-style-type: circle">Practice</li>
-						</ul>
-					</ul>
-					</div>
-					<div style="max-width: 500px;font-size: 20px; margin: 20px" class="left">
-					<h3 style="color: black">Afternoon (12:30ish - 3): <span style="color: violet">C</span>r<span style="color: violet">UD</span></h3>
-					<ul>
-						<li>Super-awesome bonus round:</li>
-						<ul>
-							<li style="list-style-type: circle">Subqueries</li>
-						</ul>
-						<li>Practice</li>
-						<li>How to modify a database</li>
-							<ul style="list-style-type: circle">
-								<li>Creating a table</li>
-								<li>Udating a table with rows</li>
-								<li>Deleting Rows</li>
-								<ul ul style="list-style-type: square">
-									<li>v.s. deleting tables</li>
-								</ul>
-							</ul>
-							<li style="list-style-type: disc">Optomizing queries</li>
-							<li>Resoures and links</li>
-							<li>Practice</li>
-								<li>GDI Survey</li>
-						</ul>
-					</ul>
-					</div>
-				</section>
+
+					 <section>
+
+					 	<h3>Plan for the day: CRUD</h3>
+
+					 	<small><div id="column1" style="float:left; width:50%;">
+					 		<h3 style="color: black">Morning (10-12): c<span style="color: violet">R</span>ud </h3>
+					 		<ul>
+					 			<li><p>What's a database? What's SQL?</li>
+					 			<li>How to query a database:</li>
+					 			<ul>
+					 				<li style="list-style-type: circle">Select statement (from statement)</li>
+					 				<ul style="list-style-type: square">
+					 					<li>Select, Distinct</li>
+					 					<li>Count</li>
+					 				</ul>
+					 				<li style="list-style-type: circle">Group By, Order By</li>
+					 				<li style="list-style-type: circle">Clauses</li>
+					 					<ul style="list-style-type: square">
+					 						<li>Where</li>
+					 						<li>Like</li>
+					 					</ul>
+					 					<li style="list-style-type: circle">Joins(Inner/Outer Left/Right)</li>
+					 					<li style="list-style-type: circle">Practice</li>
+					 		</ul>
+					 	</div>
+					 	<div id="column2" style="float:left; width:50%;">
+					 		<h3 style="color: black">Afternoon(12:30 - 3): <span style="color: violet">C</span>r<span style="color: violet">UD</span></h3>
+					 		<ul>
+					 			<ul>
+					 				<li>Super-awesome bonus round:</li>
+					 				<ul>
+					 					<li style="list-style-type: circle">Subqueries</li>
+					 				</ul>
+					 				<li>Practice</li>
+					 				<li>How to modify a database</li>
+					 					<ul style="list-style-type: circle">
+					 						<li>Creating a table</li>
+					 						<li>Udating a table with rows</li>
+					 						<li>Deleting Rows</li>
+					 						<ul ul style="list-style-type: square">
+					 							<li>v.s. deleting tables</li>
+					 						</ul>
+					 					</ul>
+					 					<li style="list-style-type: disc">Optomizing queries</li>
+					 					<li>Resoures and links</li>
+					 					<li>Practice</li>
+					 						<li>GDI Survey</li>
+					 		</ul>
+					 	</div>
+					 	<div style="max-width: 500px; font-size: 20px; margin: 20px" class="left">
+					 	</small>
+
+
+					 </div>
+
+					 </section>
 
 				<section>
 					<h3>Let's connect multiple tables</h3>
