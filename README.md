@@ -14,7 +14,7 @@ This class will teach you how to query databases, create them, and edit them, to
 
 **Cost:**
 
-**Course length:** (days/hours)
+**Course length:** 1 full-day course (9:30-3:30)
 
 ### Prerequisites:
 
