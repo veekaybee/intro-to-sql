@@ -1353,21 +1353,13 @@ VALUES ('Jasmine’, ‘Aladdin’,‘456’); </code></pre>
 				<section>
 					<h3>Our beautiful movie table!</h3>
 					<p>Let’s answer some exercises with SQL:</p>
-					<ul>
-						<li>What's the most popular movie?</li>
-							<ul style="list-style-type: none; max-width: 560px">
-	     				<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 16px;font-family: Courier; font-size: 18px;">
-	     					SELECT favorite_movie, COUNT(DISTINCT first_name)
-	     				</li>
-	     				<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 16px;font-family: Courier; font-size: 18px;">
-	     					FROM moviesample
-	     					<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 16px;font-family: Courier; font-size: 18px;">
-	     					GROUP BY favorite_movie
-	     				</li>
-	     				<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 16px;font-family: Courier; font-size: 18px;">
-	     					ORDER BY COUNT(DISTINCT first_name) DESC
-	     				</li>
-     				</ul>
+
+What's the most popular movie?
+<pre><code contenteditable class ="sql">SELECT favorite_movie,
+COUNT(DISTINCT first_name)
+FROM yourname.moviesample
+GROUP BY favorite_movie
+ORDER BY COUNT(DISTINCT first_name) DESC;</pre></code>
 						<li>What’s the most popular name this Saturday?</li>
 						<li>How many times was the most someone watched a movie?</li>
 						<li>How many movies have ‘The’ in the title?</li>
@@ -1379,22 +1371,15 @@ VALUES ('Jasmine’, ‘Aladdin’,‘456’); </code></pre>
 				<section>
 					<h3>Now, let's make another table</h3>
 					<p>We want to see which decade was more popular among GDI members. This one has the data for the movie name and the year it was made.</p>
-					<img src="img/another-table.png" alt="another table" width=800px>
+					<img src="img/another-table.png" alt="another table" >
 				</section>
 
 				<section>
 					<h3>How do we add the rest of the data?</h3>
-					<ul style="list-style-type: none">
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					select * from vicki.moviesample a
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					join vicki.year_released b</li>
-     					<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					on a.movie_title=b. movie_title
-     				</li>
-     			</ul>
-     			<br><br>
+<pre><code contenteditable class ="sql">SELECT * FROM vicki.moviesample a
+JOIN vicki.year_released b</li>
+ON a.movie_title=b. movie_title</pre></code>
+
      			<ul>
      				<li>What happens when you have two fields with the same name in your select statement?</li>
      				<li>What is movie title called in year_released (special role?) </li>
