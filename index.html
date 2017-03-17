@@ -1033,52 +1033,23 @@ ORDER BY last_name</pre></code>
 					<h3 style="font-size: 48px">What kind of business questions can we answer now?  SQL Power!</h3>
 					<p>Exercises:</p>
 				 	<ul>
-				 		<li>How many employees do we have></li>
-							<ul style="list-style-type: none">
-     						<li style="background-color: LightGray; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     						SELECT COUNT(DISTINCT emp_no)
-     					</li>
-     					<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					FROM employees;</li>
-     					</ul>
-     					<li>How Many People Got Raises in 1999?</li>
-     						<ul style="list-style-type: none">
-	    							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-	     							select * from
-	     							</li>
-	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-	     							select emp_no, count(*) as number_of_salaries from salaries
+				 		<li>How many employees do we have?</li>
+<pre><code contenteditable class ="sql"> SELECT COUNT(DISTINCT emp_no)
+FROM employees;</code></pre>
 
-	     							</li>
-	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-	     							where from_date>'1998-01-01'
-	     							</li>
-	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-	     							and from_date<'2000-01-01'
-	     							</li>
-	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-	     							group by emp_no) a
-	     							</li>
-	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-	     							where number_of_salaries >1
-	     							</li>
-     						</ul>
-     					<li>What’s the most common title we have?</li>
-     						<ul style="list-style-type: none">
-	    							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-	     							select title, count(distinct a.emp_no) from titles a
-	     							</li>
-	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-	     							join employees b
-	     							</li>
-	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-	     							on a.emp_no=b.emp_no
-	     							</li>
-	     							<li style="background-color: LightGrey; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-	     							group by title
-	     							</li>
-     						</ul>
-     						</ul>
+     					<li>How many people got raises in 1999?</li>
+	<pre><code contenteditable class ="sql"> SELECT * from (
+	SELECT emp_no, count(*) AS number_of_salaries FROM salaries
+	WHEREfrom_date>'1998-01-01'
+	AND from_date<'2000-01-01'
+	GROUP BY emp_no) a
+	WHERE number_of_salaries >1</code></pre>
+     					<li>What’s the most common job title we have?</li>
+	<pre><code contenteditable class ="sql"> SELECT title, COUNT(DISTINCT a.emp_no) FROM titles a
+	JOIN employees b
+	ON a.emp_no=b.emp_no
+	GROUP BY title</code></pre>
+
      		</section>
 
      		<section>
@@ -1086,7 +1057,7 @@ ORDER BY last_name</pre></code>
 						<p>Exercises:</p>
      				<ul>
      					<li>What's the top salary by department?</li>
-     					<li>How much money did non-engineers make></li>
+     					<li>How much money did non-engineers make?</li>
      					<li>Extra-hard question:</li>
      					<ul>
      						<li>How many women engineers got raises in 2000 versus male engineer, and who were their managers? </li>
@@ -1133,11 +1104,11 @@ ORDER BY last_name</pre></code>
 					<h3>First we create our schema</h3>
 					<p>Name it with your first name or something easy you can remember;
 					You’ll have to keep typing it, so under 10 characters is optimal</p>
-					<img src="img/schema-create.png" alt="Create Schema" width=700px>
+					<img src="img/schema-create.png" alt="Create Schema" >
 				</section>
 
 				<section>
-					<h3>And you should see it show up here:</h3>
+					<h3>And you should see it show up:</h3>
 					<img src="img/schema-result.png" alt="Create Schema" width=700px>
 				</section>
 
