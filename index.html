@@ -1264,31 +1264,16 @@ FROM employees;</code></pre>
 
 				<section>
 					<h3>Here's the create statement for one of the tables we've been working with</h3>
-					<ul style="list-style-type: none">
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					CREATE TABLE employees (
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					emp_no      INT             NOT NULL,
-     					<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					first_name  VARCHAR(14)     NOT NULL,
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					last_name   VARCHAR(16)     NOT NULL,
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					gender      ENUM ('M','F')  NOT NULL,
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					hire_date   DATE            NOT NULL,
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					PRIMARY KEY (emp_no)
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">);</li>
-     			</ul>
-     			<p>Which field is the primary key? Which fields are numbers? What’s <span style="text-decoration: underline">enum</span>*?</p>
+<pre><code contenteditable class ="sql">CREATE TABLE employees (
+emp_no      INT             NOT NULL,
+first_name  VARCHAR(14)     NOT NULL,
+last_name   VARCHAR(16)     NOT NULL,
+gender      ENUM ('M','F')  NOT NULL,
+hire_date   DATE            NOT NULL,
+PRIMARY KEY (emp_no)</code></pre>
+     			<p>Which field is the primary key? <br>
+						Which fields are numbers? <br>
+						What’s <a href="https://dev.mysql.com/doc/refman/5.7/en/enum.html">enum</a>*?</p>
      		</section>
      		<section>
 					<h3>Let's get to it</h3>
@@ -1297,48 +1282,41 @@ FROM employees;</code></pre>
 
 				<section>
 					<h3>In PHPMYADMIN: STEP 1</h3>
-					<img src="img/phpmyadmin-step1.png" alt="phpmyadmin step 1" width=800px>
+					<img src="img/phpmyadmin-step1.png" alt="phpmyadmin step 1" >
 				</section>
 
 				<section>
 					<h3>In PHPMYADMIN: STEP 2</h3>
-					<img src="img/phpmyadmin-step2.png" alt="phpmyadmin step 2" width=800px>
+					<img src="img/phpmyadmin-step2.png" alt="phpmyadmin step 2" >
 				</section>
 
 				<section>
 					<h3>In PHPMYADMIN: STEP 3</h3>
-					<p>Congratulations, it’s a baby table! </p>
-					<img src="img/phpmyadmin-step3.png" alt="phpmyadmin step 3" width=800px>
+					<p>Congratulations, it’s a table! </p>
+					<img src="img/phpmyadmin-step3.png" alt="phpmyadmin step 3" >
 				</section>
 
 				<section>
 					<h3>Now let's do some quick analysis</h3>
-					<ul style="list-style-type: none">
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					select * from vicki. moviesample
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					select first_name from vicki. moviesample
-     					</li>
-     					<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					select count(*) from vicki.moviesample</li>
-     			</ul>
-     			<br><br>
+<pre><code contenteditable class ="sql"> SELECT * FROM vicki. moviesample;
+SELECT first_name FROM vicki.moviesample;
+SELECT COUNT(*) FROM vicki.moviesample;</PRE></code>
      			<p>What do we get?</p>
-     			<p>Nothing! because our table has no data. :(</p>
-     			<p>...yet</p>
+     			<p>Nothing! because our table has no data. :(...yet</p>
 
      		</section>
 
      		<section>
 					<h3>To the SQL: Inserting data into a SQL table</h3>
 					<p>Now that we have the table set up, we can insert the values. Let’s load a row of data.</p>
-					<img src="img/insert-data.png" alt="insert data" width=800px>
+	<pre><code contenteditable class ="sql">INSERT INTO
+yourfirstname.yourtablename(first_name, favorite_movie, times_watched) -- column names
+VALUES ('Jasmine’, ‘Aladdin’, ‘456’); -- column values </PRE></code>
 				</section>
 
 				<section>
 					<h3>Adding data to tables</h3>
-					<img src="img/adding-data.png" alt="adding data" width=800px>
+					<img src="img/adding-data.png" alt="adding data" >
 				</section>
 
 				<section>
@@ -1348,39 +1326,13 @@ FROM employees;</code></pre>
 
 				<section>
 					<h3>How do we add the rest of the data?</h3>
-					<ul style="list-style-type: none">
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					INSERT INTO vicki.movie_sample
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					(first_name, favorite_movie,
-     					<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					times_watched)
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					VALUES ('Vicki’, ‘Beauty and the
-     				</li>
-     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					Beast’, ‘5’);
-     				</li>
-     				<br>
-     				<li style="background-color: LightSkyBlue; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					INSERT INTO vicki.movie_sample
-     				</li>
-     				<li style="background-color: LightSkyBlue ; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					(first_name, favorite_movie,
-     				</li>
-     				<li style="background-color: LightSkyBlue ; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     				<li style="background-color: LightSkyBlue ; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					times_watched)
-     				</li>
-     				<li style="background-color: LightSkyBlue ; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					VALUES ('Jasmine’, ‘Aladdin’,
-     				</li>
-     				<li style="background-color: LightSkyBlue ; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
-     					‘456’);
-     				</li>
-     			</ul>
+<pre><code contenteditable class ="sql">INSERT INTO vicki.moviesample
+(first_name, favorite_movie,times_watched)
+VALUES ('Vicki’, ‘Beauty and the Beast’, ‘5’);
+
+INSERT INTO vicki.movie_sample
+(first_name, favorite_movie,times_watched)
+VALUES ('Jasmine’, ‘Aladdin’,‘456’); </code></pre>
      		</section>
 
      		<section>
