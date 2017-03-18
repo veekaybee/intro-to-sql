@@ -203,7 +203,7 @@
 								</ul>
 						</ul>
 						<li><span style="color: violet">CRUD (Create, Read, Update, Delete): </span>How you change the databases and tables in the database</li> <br>
-						<li><b>Relational Data Model</b> : Data related to each other are stored a certain way and “point” to each other (Like Excel cell references)</li><br>
+						<li><b>Relational Data Model</b> : Data related to each other are stored a certain way and "point" to each other (Like Excel cell references)</li><br>
 						<li><b>Database keys (primary and foreign):</b> The pointers in each table that can link to other tables</li><br>
 						<li><b>Indexes:</b> Make databases easier to search</li><br>
 						<li><b>RDBMS systems:</b> Types of relational databases that have all the properties of relational data models: MySQL, Oracle, Access, Postgres</li><br>
@@ -214,9 +214,9 @@
 
 				<section>
 					<h3>Databases, schemas, and tables</h3>
-					<p>DB Schema→ Table → Row → Value</p>
+					<p>DB Schema&rarr; Table &rarr; Row &rarr; Value</p>
 					<img src="https://s-media-cache-ak0.pinimg.com/originals/15/4e/a5/154ea5bcf4a430980f137eae6f328075.jpg" alt="Nesting Dolls" width=500px>
-				<p>Excel File → Workbook → Row → Cell</p>
+				<p>Excel File &rarr; Workbook &rarr; Row &rarr; Cell</p>
 
 				</section>
 
@@ -321,7 +321,7 @@
 
 	         	<ul>
 	         		<li>How many customers do we have in Los Angeles?</li><br>
-	         		<li>What's that person’s Facebook and Twitter handle?</li><br>
+	         		<li>What's that person's Facebook and Twitter handle?</li><br>
 	         		<li>Did profits go up or down this quarter? </li><br>
 	         		<li>How many users are clicking on our new site?</li><br>
 	         	</ul>
@@ -421,9 +421,9 @@
 	         <h3>Tables and Schemas</h3>
 	         <p> <code>employees</code> is the database and it has 6 tables. </p>
 	         <p>Database/schema used interchangeably</p>
-					 <p style="color:violet; font-size: 30px; line-height:30px">Database →  Schema ---> Table</p>
+					 <p style="color:violet; font-size: 30px; line-height:30px">Database &rarr;  Schema ---> Table</p>
 					 <p style="color:violet; font-size: 30px; line-height:30px">Book ---> Chapter ---> Page</p>
-					 <p style="color:violet; font-size: 30px; line-height:30px">MySQL Database → Employees Schema → employees Table</p>
+					 <p style="color:violet; font-size: 30px; line-height:30px">MySQL Database &rarr; Employees Schema &rarr; employees Table</p>
 
 	         <img src="img/employee-table.png" alt="PHP abstraction" width=250px/>
 			   </section>
@@ -441,7 +441,7 @@
 			   		<li>And so on.</li>
 			   	</ul>
 			   	<br><br>
-			   	<p style="background-color: orange;font-size: 24px">Usually it’s bad practice to name tables the same thing as the schema (confusing), but we’ll be ok with the small test data set.</p>
+			   	<p style="background-color: orange;font-size: 24px">Usually it's bad practice to name tables the same thing as the schema (confusing), but we'll be ok with the small test data set.</p>
 			   </section>
 
 			   <section>
@@ -453,7 +453,7 @@
 					<h6> Go to the SQL tab and type in:</h6>
 					<pre><code contenteditable class ="sql">SELECT * FROM employees.employees; </code></pre>
 						<img src="img/select-star.png" alt="select-star">
-						<p style="background-color: orange;font-size: 24px">Type out all the SQL you write. It’ll be easier to learn.</p>
+						<p style="background-color: orange;font-size: 24px">Type out all the SQL you write. It'll be easier to learn.</p>
      		</section>
 
 
@@ -482,14 +482,14 @@ select * from employees.salaries; </code>
 						<code contenteditable class ="sql">select title, emp_no from titles; </code>
 					 </pre>
 
-					 <p>A note about the semi-colon: The semicolon:  you don’t really need it,
-						depending on which flavor of SQL you’re using,
-						but it’s good practice in general to include it.
+					 <p>A note about the semi-colon: The semicolon:  you don't really need it,
+						depending on which flavor of SQL you're using,
+						but it's good practice in general to include it.
 						Like a period at the end of an English sentence.
      		</section>
 
 				<section>
-     			<h3>More specific columns. Let’s get to know our data. </h3>
+     			<h3>More specific columns. Let's get to know our data. </h3>
 					<p style="text-align: left"> Selecting one column:</p>
 					<pre><code contenteditable class ="sql">SELECT department_name FROM employees.departments;</code></pre>
 					<p style="text-align: left"> Selecting multiple columns: </p>
@@ -664,7 +664,7 @@ GROUP BY birth_date, first_name, gender;</pre></code>
 	         <p>When was your youngest employee born?</p>
 	<pre><code contenteditable class ="sql"> SELECT MAX(birth_date) FROM employees;</pre></code>
 
-<div align="left"><p style="background-color: orange;font-size: 24px">In this case, you don’t need the group-by statement since you’re not counting groups of people, but looking at the whole table</p></div>
+<div align="left"><p style="background-color: orange;font-size: 24px">In this case, you don't need the group-by statement since you're not counting groups of people, but looking at the whole table</p></div>
 
 <br>
 	     			<p>When was your youngest female employee born?</p>
@@ -759,7 +759,7 @@ ORDER BY salary DESC;
          	<p>You only want to select certain things.</p>
 <pre><code contenteditable class ="sql">SELECT first_name, gender, COUNT(*)
 FROM employees
-WHERE first_name=’Adam’
+WHERE first_name='Adam'
 GROUP BY first_name, gender;</pre></code>
 
 <table style="border-collapse:collapse;border-spacing:0"><tr><th style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top">first_name</th><th style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top">gender</th><th style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top">COUNT(*)</th></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top">Adam</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top">M</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top">164</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top">Adam</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top">F</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top">87</td></tr></table>
@@ -768,7 +768,7 @@ GROUP BY first_name, gender;</pre></code>
          <section>
 		         	<h3>Like statements are really useful in where clauses</h3>
 
-	<p style="font-size: 32px">“Like” will pick up anything similar to what you entered.</p>
+	<p style="font-size: 32px">"Like" will pick up anything similar to what you entered.</p>
 <pre><code contenteditable class ="sql">SELECT last_name, COUNT( * )
 FROM employees
 WHERE last_name LIKE "S%"
@@ -778,8 +778,8 @@ GROUP BY last_name;</pre></code>
 		     				Exercises:
 		     				<ul>
 		     					<li>What happens when you search in all caps?</li>
-		     					<li>What happens when you do last_name = “S%”</li>
-		     					<li>What’s the difference between like and =?</li>
+		     					<li>What happens when you do last_name = "S%"</li>
+		     					<li>What's the difference between like and =?</li>
 		     					<ul>
 		     						<li>Like is more like a search engine</li>
 		     						<li>= means you have to have an exact match</li>
@@ -793,7 +793,7 @@ GROUP BY last_name;</pre></code>
          	<h3>Where clause exercises</h3>
          	<p>Only all the females</p>
 <pre><code contenteditable class ="sql"> SELECT * FROM employees
-WHERE gender=’F’;</pre></code>
+WHERE gender='F';</pre></code>
 	<p>Only all of the engineers</p>
 <pre><code contenteditable class ="sql">SELECT * FROM titles
 WHERE title LIKE '%Engineer%';</pre></code>
@@ -805,9 +805,9 @@ WHERE title LIKE '%Engineer%';</pre></code>
 
 <pre><code contenteditable class ="sql"> WHERE number >='5'; --returns (5,6,7,8...)</pre></code>
 <pre><code contenteditable class ="sql"> WHERE number > '5'; --returns (6,7,8...)</pre></code>
-<pre><code contenteditable class ="sql"> WHERE day <= ‘1-Jan-2017’; --returns (Jan 1, Dec. 31, Dec. 30…)</pre></code>
-<pre><code contenteditable class ="sql"> WHERE day < ‘1-Jan-2017’; --returns (Dec. 31, Dec. 30…)</pre></code>
-<pre><code contenteditable class ="sql"> WHERE day != ‘1-Jan-2017’; --returns anything other than Jan 1</pre></code>
+<pre><code contenteditable class ="sql"> WHERE day <= '1-Jan-2017'; --returns (Jan 1, Dec. 31, Dec. 30&hellip;)</pre></code>
+<pre><code contenteditable class ="sql"> WHERE day < '1-Jan-2017'; --returns (Dec. 31, Dec. 30&hellip;)</pre></code>
+<pre><code contenteditable class ="sql"> WHERE day != '1-Jan-2017'; --returns anything other than Jan 1</pre></code>
 
          </section>
 
@@ -878,7 +878,7 @@ WHERE title LIKE '%Engineer%';</pre></code>
 
 				<section>
 					<h3>Let's connect multiple tables</h3>
-					<p style="background-color: orange"><code>emp_no</code> is the column that’s the primary key for all three tables that allows us to join them</p>
+					<p style="background-color: orange"><code>emp_no</code> is the column that's the primary key for all three tables that allows us to join them</p>
 					<img src="img/join-tables.png" alt="Group by More than One Item" width=600px/>
 					<ul>
 						<li>We join by <span style="font-weight: 900px">primary keys:</span> A field (or set of fields) that uniquely determine a row.</li>
@@ -895,7 +895,7 @@ WHERE title LIKE '%Engineer%';</pre></code>
 				<section>
 					<h3>In SQL, a join looks like this:</h3>
 					<img src="img/join-sql.png" alt="Group by More than One Item" width=700px/>
-					<p style="background-color: orange; font-size: 24px;font-weight: 900">Often when we join tables, we make them easier to reference later on by aliasing them, but at this point it’s a style choice.<p>
+					<p style="background-color: orange; font-size: 24px;font-weight: 900">Often when we join tables, we make them easier to reference later on by aliasing them, but at this point it's a style choice.<p>
 				</section>
 
 				<section>
@@ -970,7 +970,7 @@ JOIN salaries b ON a.emp_no = b.emp_no</pre></code>
 <pre><code contenteditable class ="sql">SELECT first_name, last_name, hire_date,title, c.from_date, c.to_date
 FROM employees a
 LEFT JOIN titles c ON a.emp_no = c.emp_no;</pre></code>
-     			<p style="background-color: orange; font-weight: 900">What if you’d done a right join instead?</p>
+     			<p style="background-color: orange; font-weight: 900">What if you'd done a right join instead?</p>
 
 
 				</section>
@@ -984,7 +984,7 @@ DISTINCT title) , COUNT(DISTINCT salary)
 FROM employees a
 JOIN salaries b ON a.emp_no = b.emp_no
 JOIN titles c ON a.emp_no = c.emp_no
-where first_name like ‘A%’
+where first_name like 'A%'
 GROUP BY first_name, last_name, hire_date,a.emp_no;</pre></code>
      				</li>
      			</ul>
@@ -1044,7 +1044,7 @@ FROM employees;</code></pre>
 	AND from_date<'2000-01-01'
 	GROUP BY emp_no) a
 	WHERE number_of_salaries >1</code></pre>
-     					<li>What’s the most common job title we have?</li>
+     					<li>What's the most common job title we have?</li>
 	<pre><code contenteditable class ="sql"> SELECT title, COUNT(DISTINCT a.emp_no) FROM titles a
 	JOIN employees b
 	ON a.emp_no=b.emp_no
@@ -1080,7 +1080,7 @@ FROM employees;</code></pre>
 
 				<section>
 					<h3>We learned cRud; now we learn CrUD</h3>
-					<p>Now that you see how powerful SQL is, let’s make some tables of our own. What if we have tons of data we want to query? </p>
+					<p>Now that you see how powerful SQL is, let's make some tables of our own. What if we have tons of data we want to query? </p>
 					<p>Or we want to join our Excel tables to other data?</p>
 				</section>
 
@@ -1095,15 +1095,15 @@ FROM employees;</code></pre>
 
 				<section>
 					<h3>Databases, schemas, and tables</h3>
-					<p>DB Schema→ Table → Row → Value</p>
+					<p>DB Schema&rarr; Table &rarr; Row &rarr; Value</p>
 					<img src="https://s-media-cache-ak0.pinimg.com/originals/15/4e/a5/154ea5bcf4a430980f137eae6f328075.jpg" alt="Nesting Dolls" width=500px>
-					<p>Excel File → Workbook → Row → Cell</p>
+					<p>Excel File &rarr; Workbook &rarr; Row &rarr; Cell</p>
 				</section>
 
 				<section>
 					<h3>First we create our schema</h3>
 					<p>Name it with your first name or something easy you can remember;
-					You’ll have to keep typing it, so under 10 characters is optimal</p>
+					You'll have to keep typing it, so under 10 characters is optimal</p>
 					<img src="img/schema-create.png" alt="Create Schema" >
 				</section>
 
@@ -1202,8 +1202,8 @@ FROM employees;</code></pre>
 					<ul>
 						<li>First Name as the Primary Key and Foreign Key</li>
 						<ul>
-							<li>We can join by the name, as long as it’s unique</li>
-							<li>But our names aren’t unique, so we’ll create an incrementer</li>
+							<li>We can join by the name, as long as it's unique</li>
+							<li>But our names aren't unique, so we'll create an incrementer</li>
 						</ul>
 						<li>First Name Should be a Character Field.</li>
 						<li>Favorite Movie should be a character Field.</li>
@@ -1214,7 +1214,7 @@ FROM employees;</code></pre>
 				<section>
 					<h3>Two ways to execute in MySQL: PHPMyAdmin and command line</h3>
 					<img src="img/two-ways-to-exec-sql.png" alt="two ways to execute sql" width=800px>
-					<p>For the second half of the class we’ll be working with commands more than the UI, but there is usually more than 1 way to do everything in MySQL.</p>
+					<p>For the second half of the class we'll be working with commands more than the UI, but there is usually more than 1 way to do everything in MySQL.</p>
 				</section>
 
 				<section>
@@ -1273,7 +1273,7 @@ hire_date   DATE            NOT NULL,
 PRIMARY KEY (emp_no)</code></pre>
      			<p>Which field is the primary key? <br>
 						Which fields are numbers? <br>
-						What’s <a href="https://dev.mysql.com/doc/refman/5.7/en/enum.html">enum</a>*?</p>
+						What's <a href="https://dev.mysql.com/doc/refman/5.7/en/enum.html">enum</a>*?</p>
      		</section>
      		<section>
 					<h3>Let's get to it</h3>
@@ -1292,7 +1292,7 @@ PRIMARY KEY (emp_no)</code></pre>
 
 				<section>
 					<h3>In PHPMYADMIN: STEP 3</h3>
-					<p>Congratulations, it’s a table! </p>
+					<p>Congratulations, it's a table! </p>
 					<img src="img/phpmyadmin-step3.png" alt="phpmyadmin step 3" >
 				</section>
 
@@ -1308,10 +1308,10 @@ SELECT COUNT(*) FROM vicki.moviesample;</PRE></code>
 
      		<section>
 					<h3>To the SQL: Inserting data into a SQL table</h3>
-					<p>Now that we have the table set up, we can insert the values. Let’s load a row of data.</p>
+					<p>Now that we have the table set up, we can insert the values. Let's load a row of data.</p>
 	<pre><code contenteditable class ="sql">INSERT INTO
 yourfirstname.yourtablename(first_name, favorite_movie, times_watched) -- column names
-VALUES ('Jasmine’, ‘Aladdin’, ‘456’); -- column values </PRE></code>
+VALUES ('Jasmine', 'Aladdin', '456'); -- column values </PRE></code>
 				</section>
 
 				<section>
@@ -1328,11 +1328,11 @@ VALUES ('Jasmine’, ‘Aladdin’, ‘456’); -- column values </PRE></code>
 					<h3>How do we add the rest of the data?</h3>
 <pre><code contenteditable class ="sql">INSERT INTO vicki.moviesample
 (first_name, favorite_movie,times_watched)
-VALUES ('Vicki’, ‘Beauty and the Beast’, ‘5’);
+VALUES ('Vicki', 'Beauty and the Beast', '5');
 
 INSERT INTO vicki.movie_sample
 (first_name, favorite_movie,times_watched)
-VALUES ('Jasmine’, ‘Aladdin’,‘456’); </code></pre>
+VALUES ('Jasmine', 'Aladdin','456'); </code></pre>
      		</section>
 
      		<section>
@@ -1352,7 +1352,7 @@ VALUES ('Jasmine’, ‘Aladdin’,‘456’); </code></pre>
 
 				<section>
 					<h3>Our beautiful movie table!</h3>
-					<p>Let’s answer some exercises with SQL:</p>
+					<p>Let's answer some exercises with SQL:</p>
 
 What's the most popular movie?
 <pre><code contenteditable class ="sql">SELECT favorite_movie,
@@ -1360,9 +1360,9 @@ COUNT(DISTINCT first_name)
 FROM yourname.moviesample
 GROUP BY favorite_movie
 ORDER BY COUNT(DISTINCT first_name) DESC;</pre></code>
-						<li>What’s the most popular name this Saturday?</li>
+						<li>What's the most popular name this Saturday?</li>
 						<li>How many times was the most someone watched a movie?</li>
-						<li>How many movies have ‘The’ in the title?</li>
+						<li>How many movies have 'The' in the title?</li>
 						<li>How many people watched a favorite movie more than 3 times? </li>
 
 					</ul>
@@ -1384,8 +1384,8 @@ ON a.movie_title=b. movie_title</pre></code>
      				<li>What happens when you have two fields with the same name in your select statement?</li>
      				<li>What is movie title called in year_released (special role?) </li>
      				<li>What would be a better field to join on?</li>
-     				<li>What’s the year with the most popular movies?</li>
-     				<li>And, what’s the decade with the most popular movies?
+     				<li>What's the year with the most popular movies?</li>
+     				<li>And, what's the decade with the most popular movies?
 							Hint: Take the first three digits of the year</li>
 						<ul style="list-style-type: none;max-width: 600px">
 	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
@@ -1399,7 +1399,7 @@ ON a.movie_title=b. movie_title</pre></code>
 					<h3><span style="background-color: OrangeRed; color:white">Deleting</span> SQL Values</h3>
 					<div style="font-size: 30px">
 					<p>What kind of issues do you see arising from wrong data entry?</p>
-					<p>This is the part where you have to be really careful. Most users won’t have access to delete tables.</p>
+					<p>This is the part where you have to be really careful. Most users won't have access to delete tables.</p>
 					<p><span style="color: OrangeRed">truncate table;</span>  Leaves the table structure in tact, just deletes the values.  (deleting all values in a spreadsheet, keeping file)</p>
 					<br>
 					<p style="background-color: OrangeRed">drop table; Deletes EVERYTHING.  BADBADBAD. (file goes in the trash)</p>
@@ -1413,7 +1413,7 @@ ON a.movie_title=b. movie_title</pre></code>
 					<img src="img/dropping-rows.png" alt="dropping rows" width=700px>
 					<ul style="list-style-type: none">
 						<li>SQL...more accurate.</li>
-	     					<code>DELETE FROM user1.moviesample WHERE first_name=’Shrek’;</code>
+	     					<code>DELETE FROM user1.moviesample WHERE first_name='Shrek';</code>
 
 	     				<li style="background-color: yellow; margin-bottom: 6px;line-height: 22px;font-family: Courier; font-size: 22px;">
 
@@ -1423,10 +1423,10 @@ ON a.movie_title=b. movie_title</pre></code>
 				<section>
 					<h3>You can delete with any type of where statement</h3>
 <pre><code contenteditable class ="sql">DELETE FROM moviesample
-WHERE first_name like ’%S’;
+WHERE first_name like '%S';
 
 DELETE FROM moviesample</li>
-WHERE times_watched >=’500’;</li> </code></pre>
+WHERE times_watched >='500';</li> </code></pre>
      		</section>
      		<section>
      			<h3>Altering the Table</h3>
@@ -1452,11 +1452,11 @@ varchar(4) after times_watched;</pre></code>
      				<li>You misspelled something</li>
      				<li>Selection from table you don't have rights to</li>
      				<li>Your group by statements don't have enough columns</li>
-     				<li>Query’s running too long</li>
-     				<li>Format for date/time doesn’t match</li>
-     				<li>You’re selecting from the wrong table in the schema</li>
+     				<li>Query's running too long</li>
+     				<li>Format for date/time doesn't match</li>
+     				<li>You're selecting from the wrong table in the schema</li>
      				<li>Date type is the wrong type for a join</li>
-     				<li>You haven’t aliased your table</li>
+     				<li>You haven't aliased your table</li>
      			</ul>
      		</section>
 
