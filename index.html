@@ -1921,7 +1921,7 @@ first_name  VARCHAR(14)     NOT NULL,
 last_name   VARCHAR(16)     NOT NULL,
 gender      ENUM ('M','F')  NOT NULL,
 hire_date   DATE            NOT NULL,
-PRIMARY KEY (emp_no)</code></pre>
+PRIMARY KEY (emp_no);</code></pre>
                     <p>
                         Which field is the primary key?<br>
                         Which fields are numbers?<br>
@@ -1955,7 +1955,7 @@ PRIMARY KEY (emp_no)</code></pre>
                     <h3>
                         Now let's do some quick analysis
                     </h3>
-                    <pre><code contenteditable="" class="sql"> SELECT * FROM vicki. moviesample;
+                    <pre><code contenteditable="" class="sql">SELECT * FROM vicki.moviesample;
 SELECT first_name FROM vicki.moviesample;
 SELECT COUNT(*) FROM vicki.moviesample;</code></pre>
                     <p>
@@ -1973,13 +1973,17 @@ SELECT COUNT(*) FROM vicki.moviesample;</code></pre>
                         Now that we have the table set up, we can insert the values. Let's load a row of data.
                     </p>
                     <pre><code contenteditable="" class="sql">INSERT INTO
-yourfirstname.yourtablename(first_name, favorite_movie, times_watched) -- column names
+yourname.tablename(first_name, favorite_movie,
+times_watched) -- column names
 VALUES ('Jasmine', 'Aladdin', '456'); -- column values </code></pre>
                 </section>
                 <section>
                     <h3>
-                        Adding data to tables
-                    </h3><img src="img/adding-data.png" alt="adding data">
+                        Adding data to tables </h3>
+
+											<pre><code contenteditable="" class="sql">INSERT INTO vicki.moviesample(first_name, favorite_movie, times_watched)
+VALUES ('Alice','Alice in Wonderland', 5);</code></pre>
+
                 </section>
                 <section>
                     <h3>
@@ -2055,7 +2059,7 @@ ORDER BY COUNT(DISTINCT first_name) DESC;</code></pre>
                         How do we add the rest of the data?
                     </h3>
                     <pre><code contenteditable="" class="sql">SELECT * FROM vicki.moviesample a
-JOIN vicki.year_released b
+JOIN vicki.movie_year b
 ON a.movie_title=b. movie_title</code></pre>
                     <ul>
                         <li>What happens when you have two fields with the same name in your select statement?
@@ -2117,6 +2121,34 @@ WHERE first_name like '%S';
 DELETE FROM moviesample
 WHERE times_watched &gt;='500'; </code></pre>
                 </section>
+
+								<section>
+                    <h3>
+                        Updating the table
+                    </h3>
+                    <ul class="c12">
+                        <li>
+                            <code>SELECT</code> is to count things
+                        </li>
+                        <li>
+                            <code>CREATE</code>is to create a table
+                        </li>
+                        <li>
+                            <code>DELETE</code> is to erase
+                        </li>
+                        <li>
+                            <code>UPDATE</code> is to change specific entries
+                        </li><br>
+                        <ul>
+                            <pre><code contenteditable="" class="sql">UPDATE moviesample
+SET first_name = 'Chihiro', times_watched= 3
+WHERE movie = 'Spirited Away';</code></pre>
+                            <p>
+                                Try it now
+                        </ul>
+                    </ul>
+                </section>
+
                 <section>
                     <h3>
                         Altering the Table
@@ -2141,7 +2173,7 @@ ALTER TABLE icecream MODIFY flavor VARCHAR(35);</code></pre>
                             <p>
                                 Try it now:
                             </p>
-                            <pre><code contenteditable="" class="sql">ALTER TABLE vicki.moviesample ADD COLUMN year_released
+                            <pre><code contenteditable="" class="sql">ALTER TABLE vicki.moviesample ADD COLUMN release_yr
 varchar(4) after times_watched;</code></pre>
                         </ul>
                     </ul>
