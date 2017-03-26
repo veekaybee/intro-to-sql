@@ -1176,7 +1176,7 @@ GROUP BY last_name;</code></pre>
                         <ul>
                             <li>What happens when you search in all caps?
                             </li>
-                            <li>What happens when you do last_name = "S%"
+                            <li>What happens when you do last_name = 'S%''
                             </li>
                             <li>What's the difference between like and =?
                             </li>
@@ -1194,10 +1194,10 @@ GROUP BY last_name;</code></pre>
                         Where clause exercises
                     </h3>
                     <p>
-                        Only all the females
+                        Only all people named mary
                     </p>
-                    <pre><code contenteditable="" class="sql"> SELECT * FROM employees
-WHERE gender='F';</code></pre>
+                    <pre><code contenteditable="" class="sql">SELECT * FROM employees
+WHERE first_name='Mary';</code></pre>
                     <p>
                         Only all of the engineers
                     </p>
