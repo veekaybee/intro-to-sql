@@ -109,12 +109,7 @@
                     </p>
                     <h4>
                         <br>
-                        Early?
-                    </h4>
-                    <ul>
-                        <li>any prep instructions
-                        </li>
-                    </ul>
+
                 </section>
                 <section>
                     <h1>
@@ -316,9 +311,9 @@
                 </section>
                 <section>
                     <h4>
-                        The language of relational databases
+                        The language of relational databases (1/2)
                     </h4>
-                    <div class="c10">
+                    <div class="c12">
                         <ul>
                             <li>
                                 <span class="c9">Database:</span> A group of data organized in a logical way(Excel workbook)
@@ -342,22 +337,33 @@
                                 <b>Relational Data Model</b> : Data related to each other are stored a certain way and "point" to each other (Like Excel cell
                                 references)
                             </li><br>
-                            <li>
-                                <b>Database keys (primary and foreign):</b> The pointers in each table that can link to other tables
-                            </li><br>
-                            <li>
-                                <b>Indexes:</b> Make databases easier to search
-                            </li><br>
-                            <li>
-                                <b>RDBMS systems:</b> Types of relational databases that have all the properties of relational data models: MySQL, Oracle,
-                                Access, Postgres
-                            </li><br>
-                            <li>
-                                <b>Queries:</b> How to ask questions of the tables and databases
-                            </li><br>
                         </ul>
                     </div>
                 </section>
+
+								<section>
+										<h4>
+												The language of relational databases (2/2)
+										</h4>
+										<div class="c15">
+												<ul>
+														<li>
+																<b>Database keys (primary and foreign):</b> The pointers in each table that can link to other tables
+														</li><br>
+														<li>
+																<b>Indexes:</b> Make databases easier to search
+														</li><br>
+														<li>
+																<b>RDBMS systems:</b> Types of relational databases that have all the properties of relational data models: MySQL, Oracle,
+																Access, Postgres
+														</li><br>
+														<li>
+																<b>Queries:</b> How to ask questions of the tables and databases
+														</li><br>
+												</ul>
+										</div>
+								</section>
+
                 <section>
                     <h3>
                         Databases, schemas, and tables
@@ -494,7 +500,7 @@
                                 <span class="c1">Update</span> UPDATE, ALTER
                             </li>
                             <ul class="c12">
-                                <li>Picking specific information from your table
+                                <li>Changing specifc information in your table
                                 </li>
                             </ul>
                             <li>
@@ -706,14 +712,14 @@
                 </section>
                 <section>
                     <h3>
-                        select * from different tables
+                        SELECT * from different tables
                     </h3>
                     <p>
                         Try a couple of these:
                     </p>
-                    <pre><code contenteditable="" class="sql">select * from employees.titles;
-select * from employees.dept_emp;
-select * from employees.salaries; </code></pre>
+                    <pre><code contenteditable="" class="sql">SELECT * FROM employees.titles;
+SELECT * FROM employees.dept_emp;
+SELECT * FROM employees.salaries; </code></pre>
                     <p>
                         and check out the tables and info.
                     </p>
@@ -730,9 +736,9 @@ select * from employees.salaries; </code></pre>
                     <p>
                         Now let's try selecting only certain columns
                     </p>
-                    <pre><code contenteditable="" class="sql">select title, emp_no from titles; </code></pre>
+                    <pre><code contenteditable="" class="sql">SELECT title, emp_no FROM titles; </code></pre>
                     <p>
-                        A note about the semi-colon: The semicolon: you don't really need it, depending on which flavor of SQL you're using, but it's good
+                        A note about the semi-colon: you don't really need it, depending on which flavor of SQL you're using, but it's good
                         practice in general to include it. Like a period at the end of an English sentence.
                     </p>
                 </section>
@@ -743,7 +749,7 @@ select * from employees.salaries; </code></pre>
                     <p class="c30">
                         Selecting one column:
                     </p>
-                    <pre><code contenteditable="" class="sql">SELECT department_name FROM employees.departments;</code></pre>
+                    <pre><code contenteditable="" class="sql">SELECT dept_name FROM employees.departments;</code></pre>
                     <p class="c30">
                         Selecting multiple columns:
                     </p>
@@ -998,10 +1004,10 @@ GROUP BY birth_date, first_name, gender;</code></pre>
                         </p>
                     </div><br>
                     <p>
-                        When was your youngest female employee born?
+                        Which title has been around the longest?(Smallest employee number)
                     </p>
-                    <pre><code contenteditable="" class="sql">SELECT gender, MIN(birth_date) FROM employees
-GROUP BY gender;</code></pre>
+                    <pre><code contenteditable="" class="sql">SELECT title, MIN(emp_no) from titles
+GROUP BY title;</code></pre>
                 </section>
                 <section>
                     <h3>
@@ -1163,7 +1169,7 @@ GROUP BY first_name, gender;</code></pre>
                     </p>
                     <pre><code contenteditable="" class="sql">SELECT last_name, COUNT( * )
 FROM employees
-WHERE last_name LIKE "S%"
+WHERE last_name LIKE 'S%'
 GROUP BY last_name;</code></pre>
                     <div>
                         Exercises:
@@ -1204,9 +1210,9 @@ WHERE title LIKE '%Engineer%';</code></pre>
                     </h3>
                     <pre><code contenteditable="" class="sql"> WHERE number &gt;='5'; --returns (5,6,7,8...)</code></pre>
                     <pre><code contenteditable="" class="sql"> WHERE number &gt; '5'; --returns (6,7,8...)</code></pre>
-                    <pre><code contenteditable="" class="sql"> WHERE day &lt;= '1-Jan-2017'; --returns (Jan 1, Dec. 31, Dec. 30…)</code></pre>
-                    <pre><code contenteditable="" class="sql"> WHERE day &lt; '1-Jan-2017'; --returns (Dec. 31, Dec. 30…)</code></pre>
-                    <pre><code contenteditable="" class="sql"> WHERE day != '1-Jan-2017'; --returns anything other than Jan 1</code></pre>
+                    <pre><code contenteditable="" class="sql"> WHERE day &lt;= '2017-01-01'; --returns (Jan 1, Dec. 31, Dec. 30…)</code></pre>
+                    <pre><code contenteditable="" class="sql"> WHERE day &lt; '2017-01-01'; --returns (Dec. 31, Dec. 30…)</code></pre>
+                    <pre><code contenteditable="" class="sql"> WHERE day != '2017-01-01'; --returns anything other than Jan 1</code></pre>
                 </section>
                 <section>
                     <h3>
@@ -1509,7 +1515,7 @@ salary_start_date, to_date AS salary_end_date
 FROM employees a
 JOIN salaries b ON a.emp_no = b.emp_no
 WHERE salary &gt;60000
-AND from_date &gt;2000-01-01
+AND from_date &gt;'2000-01-01'
 ORDER BY last_name</code></pre>
                     <p class="c46">
                         Anyone whose salary is greater than $60,000 and who was hired after 1/1/2000
@@ -1554,22 +1560,22 @@ ORDER BY last_name</code></pre>
                     <ul>
                         <li>How many employees do we have?
                         </li>
-                        <pre><code contenteditable="" class="sql"> SELECT COUNT(DISTINCT emp_no)
+                        <pre><code contenteditable="" class="sql">SELECT COUNT(DISTINCT emp_no)
 FROM employees;</code></pre>
                         <li>How many people got raises in 1999?
                         </li>
                         <pre><code contenteditable="" class="sql"> SELECT * from (
         SELECT emp_no, count(*) AS number_of_salaries FROM salaries
-        WHEREfrom_date&gt;'1998-01-01'
+        WHERE from_date&gt;'1998-01-01'
         AND from_date&lt;'2000-01-01'
         GROUP BY emp_no) a
         WHERE number_of_salaries &gt;1</code></pre>
                         <li>What's the most common job title we have?
                         </li>
-                        <pre><code contenteditable="" class="sql"> SELECT title, COUNT(DISTINCT a.emp_no) FROM titles a
-        JOIN employees b
-        ON a.emp_no=b.emp_no
-        GROUP BY title</code></pre>
+                        <pre><code contenteditable="" class="sql">SELECT title, COUNT(DISTINCT a.emp_no) FROM titles a
+JOIN employees b
+ON a.emp_no=b.emp_no
+GROUP BY title</code></pre>
                     </ul>
                 </section>
                 <section>
