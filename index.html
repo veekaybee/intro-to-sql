@@ -101,12 +101,10 @@
             <div class="slides">
                 <!-- Opening -->
                 <section>
-                    <p>
-                        wifi: network
-                    </p>
-                    <p>
-                        password: password
-                    </p>
+                    
+
+                    All slides on <a href="https://github.com/gdiphilly/intro-to-sql">GitHub</a>:
+                    https://github.com/gdiphilly/intro-to-sql
                     <h4>
                         <br>
 
@@ -163,8 +161,7 @@
                     <br>
                     <br>
                     <p>
-                        We're going to make a table out of this info in part 2, and the data will live here: <a href=
-                        "http://bit.ly/SQLTable">http://bit.ly/SQLTable</a>
+                        We're going to make a table out of this info in part 2, and the data will live here: [Table Link]
                     </p>
                 </section>
                 <section>
@@ -285,7 +282,7 @@
                                     </ul>
                                 </ul>
                                 <li class="c7">
-                                    <small>Optomizing queries</small>
+                                    <small>Optimizing queries</small>
                                 </li>
                                 <li>
                                     <small>Resoures and links</small>
@@ -388,13 +385,13 @@
                     <div class="c13">
                         <ul class="c12">
                             <li>
-                                <span class="c11">SELECT</span> user_name, sum(total_purchases)
+                                <span class="c11">SELECT</span> user_name, SUM(total_purchases)
                             </li>
                             <li>
                                 <span class="c11">FROM</span> billing_database.user_table
                             </li>
                             <li>
-                                <span class="c11">WHERE</span> user_name like 'Henderson%'
+                                <span class="c11">WHERE</span> user_name LIKE 'Henderson%'
                             </li>
                             <li>
                                 <span class="c11">AND</span> billing_month = 'January'
@@ -611,10 +608,10 @@
                     </p><br>
                     <div class="c23">
                         <p class="c22">
-                            Logon site: <a href="http://bit.ly/GdiSQL">http://bit.ly/GdiSQL</a>
+                            Logon site: [site]
                         </p>
                         <p class="c22">
-                            Your Password: <a href="http://bit.ly/GDIPHPLogin">http://bit.ly/GDIPHPLogin</a>
+                            Your Password: [password]
                         </p>
                     </div>
                 </section>
@@ -736,7 +733,7 @@ SELECT * FROM employees.salaries; </code></pre>
                     <p>
                         Now let's try selecting only certain columns
                     </p>
-                    <pre><code contenteditable="" class="sql">SELECT title, emp_no FROM titles; </code></pre>
+                    <pre><code contenteditable="" class="sql">SELECT title, emp_no FROM employees.titles; </code></pre>
                     <p>
                         A note about the semi-colon: you don't really need it, depending on which flavor of SQL you're using, but it's good
                         practice in general to include it. Like a period at the end of an English sentence.
@@ -754,10 +751,7 @@ SELECT * FROM employees.salaries; </code></pre>
                         Selecting multiple columns:
                     </p>
                     <pre><code contenteditable="" class="sql">SELECT emp_no, dept_no FROM employees.dept_emp;</code></pre>
-                    <p class="c30">
-                        Selecting everything from one table with an alias for that table (will come in handy later):
-                    </p>
-                    <pre><code contenteditable="" class="sql">SELECT a.* FROM employees.salaries a;</code></pre>
+                    
                 </section>
                 <section>
                     <h3>
@@ -827,18 +821,20 @@ SELECT * FROM employees.salaries; </code></pre>
                     <p>
                         Distinct: Selecting only unique instances
                     </p>
-                    <pre><code contenteditable="" class="sql">SELECT COUNT(title) FROM employees.titles;
-433,308
-                                </code></pre>
-                    <pre><code contenteditable="" class="sql">SELECT COUNT(*) FROM employees.salaries;
-2,844,047
-                                        </code></pre>
+
                     <p>
                         Which result set is bigger?
                     </p>
                     <p>
                         What is each one telling us?
                     </p>
+                    <pre><code contenteditable="" class="sql">SELECT COUNT(title) FROM employees.titles;
+433,308
+                                </code></pre>
+                    <pre><code contenteditable="" class="sql">SELECT COUNT(*) FROM employees.salaries;
+2,844,047
+                                        </code></pre>
+                    
                 </section>
                 <section>
                     <h3>
@@ -984,10 +980,10 @@ GROUP BY emp_no;
 GROUP BY dept_no;
 </code></pre>
                     <h6>
-                        How many people that were born on the same day, have the same first name, and same gender?
+                        How many people that were born on the same day, have the same first name?
                     </h6>
-                    <pre><code contenteditable="" class="sql">SELECT birth_date,first_name,gender, COUNT(*) FROM employees
-GROUP BY birth_date, first_name, gender;</code></pre>
+                    <pre><code contenteditable="" class="sql">SELECT birth_date,first_name, COUNT(*) FROM employees.employees
+GROUP BY birth_date, first_name;</code></pre>
                 </section>
                 <section>
                     <h3>
@@ -995,7 +991,7 @@ GROUP BY birth_date, first_name, gender;</code></pre>
                         maximum and minimum
                     </h3>
                     <p>
-                        When was your youngest employee born?
+                        When was your youngest employee born? (i.e. are you following labor laws?)
                     </p>
                     <pre><code contenteditable="" class="sql"> SELECT MAX(birth_date) FROM employees;</code></pre>
                     <div align="left">
@@ -1018,20 +1014,20 @@ GROUP BY title;</code></pre>
                     </p>
                     <pre><code contenteditable="" class="sql">
 SELECT first_name, gender, COUNT(*)
-FROM employees
+FROM employees.employees
 GROUP BY first_name, gender
 ORDER BY first_name;
 
 SELECT first_name, gender, COUNT(*)
-FROM employees
+FROM employees.employees
 GROUP BY first_name, gender
-order by first_name DESC;
+ORDER by first_name DESC;
 </code></pre>
                     <p class="c29">
                         Ordering by more than one column, will sort by the first, then by the second, ascending
                     </p>
                     <pre><code contenteditable="" class="sql">
-SELECT gender, birth_date FROM employees
+SELECT gender, birth_date FROM employees.employees
 ORDER BY gender, birth_date;
 </code></pre>
                 </section>
@@ -1042,14 +1038,14 @@ ORDER BY gender, birth_date;
                     <p class="c35">
                         Order by a number ascending
                     </p>
-                    <pre><code contenteditable="" class="sql">SELECT emp_no, salary FROM salaries
+                    <pre><code contenteditable="" class="sql">SELECT emp_no, salary FROM employees.salaries
 ORDER BY salary ASC;
 </code></pre>
                     <p class="c35">
                         Order by a number descending
                     </p>
                     <p class="c29"></p>
-                    <pre><code contenteditable="" class="sql">SELECT emp_no, salary FROM salaries
+                    <pre><code contenteditable="" class="sql">SELECT emp_no, salary FROM employees.salaries
 ORDER BY salary DESC;
 </code></pre>
                 </section>
@@ -1120,17 +1116,17 @@ ORDER BY salary DESC;
                     <p>
                         You only want to select certain things.
                     </p>
-                    <pre><code contenteditable="" class="sql">SELECT first_name, gender, COUNT(*)
-FROM employees
+                    <pre><code contenteditable="" class="sql">SELECT first_name, last_name, COUNT(*)
+FROM employees.employees
 WHERE first_name='Adam'
-GROUP BY first_name, gender;</code></pre>
+GROUP BY first_name, last_name;</code></pre>
                     <table class="c38">
                         <tr>
                             <th class="c36">
                                 first_name
                             </th>
                             <th class="c36">
-                                gender
+                                last_name
                             </th>
                             <th class="c36">
                                 COUNT(*)
@@ -1141,10 +1137,10 @@ GROUP BY first_name, gender;</code></pre>
                                 Adam
                             </td>
                             <td class="c37">
-                                M
+                                Alpin
                             </td>
                             <td class="c37">
-                                164
+                                1
                             </td>
                         </tr>
                         <tr>
@@ -1152,10 +1148,10 @@ GROUP BY first_name, gender;</code></pre>
                                 Adam
                             </td>
                             <td class="c37">
-                                F
+                                Alvarado
                             </td>
                             <td class="c37">
-                                87
+                                1
                             </td>
                         </tr>
                     </table>
@@ -1194,14 +1190,14 @@ GROUP BY last_name;</code></pre>
                         Where clause exercises
                     </h3>
                     <p>
-                        Only all people named mary
+                        Only all people named Mary
                     </p>
                     <pre><code contenteditable="" class="sql">SELECT * FROM employees
 WHERE first_name='Mary';</code></pre>
                     <p>
                         Only all of the engineers
                     </p>
-                    <pre><code contenteditable="" class="sql">SELECT * FROM titles
+                    <pre><code contenteditable="" class="sql">SELECT * FROM employees.titles
 WHERE title LIKE '%Engineer%';</code></pre>
                 </section>
                 <section>
@@ -1311,7 +1307,7 @@ WHERE title LIKE '%Engineer%';</code></pre>
                                     </ul>
                                 </ul>
                                 <li class="c7">
-                                    <small>Optomizing queries</small>
+                                    <small>Optimizing queries</small>
                                 </li>
                                 <li>
                                     <small>Resoures and links</small>
@@ -1364,8 +1360,8 @@ WHERE title LIKE '%Engineer%';</code></pre>
                         Find out salary history:
                     </p>
                     <pre><code contenteditable="" class="sql">SELECT first_name, last_name, hire_date,salary, from_date, to_date
-FROM employees a
-JOIN salaries b ON a.emp_no = b.emp_no</code></pre>
+FROM employees.employees a
+JOIN employees.salaries b ON a.emp_no = b.emp_no</code></pre>
                     <style type="text/css">
                     .tg  {border-collapse:collapse;border-spacing:0;}
                     .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
@@ -1482,7 +1478,7 @@ JOIN salaries b ON a.emp_no = b.emp_no</code></pre>
                         Left join: All the fields in the first table, plus the ones that match in the second table
                     </p><br>
                     <pre><code contenteditable="" class="sql">SELECT first_name, last_name, hire_date,title, c.from_date, c.to_date
-FROM employees a
+FROM employees.employees a
 LEFT JOIN titles c ON a.emp_no = c.emp_no;</code></pre>
                     <p class="c44">
                         What if you'd done a right join instead?
@@ -1495,11 +1491,11 @@ LEFT JOIN titles c ON a.emp_no = c.emp_no;</code></pre>
                     <p class="c45">
                         What is this query telling us?
                     </p>
-                    <pre><code contenteditable="" class="sql">SELECT first_name, last_name,a.emp_no, hire_date, COUNT(
-DISTINCT title) , COUNT(DISTINCT salary)
-FROM employees a
-JOIN salaries b ON a.emp_no = b.emp_no
-JOIN titles c ON a.emp_no = c.emp_no
+                    <pre><code contenteditable="" class="sql">SELECT first_name, last_name,a.emp_no, hire_date, 
+COUNT(DISTINCT title) , COUNT(DISTINCT salary)
+FROM employees.employees a
+JOIN employees.salaries b ON a.emp_no = b.emp_no
+JOIN employees.titles c ON a.emp_no = c.emp_no
 where first_name like 'A%'
 GROUP BY first_name, last_name, hire_date,a.emp_no;</code></pre><img src="img/all-in-table.png" alt="All in table">
                 </section>
@@ -1512,8 +1508,8 @@ GROUP BY first_name, last_name, hire_date,a.emp_no;</code></pre><img src="img/al
                     </p>
                     <pre><code contenteditable="" class="sql">SELECT first_name, last_name,hire_date,a.emp_no, salary, from_date as
 salary_start_date, to_date AS salary_end_date
-FROM employees a
-JOIN salaries b ON a.emp_no = b.emp_no
+FROM employees.employees a
+JOIN employees.salaries b ON a.emp_no = b.emp_no
 WHERE salary &gt;60000
 AND from_date &gt;'2000-01-01'
 ORDER BY last_name</code></pre>
@@ -1561,18 +1557,20 @@ ORDER BY last_name</code></pre>
                         <li>How many employees do we have?
                         </li>
                         <pre><code contenteditable="" class="sql">SELECT COUNT(DISTINCT emp_no)
-FROM employees;</code></pre>
+FROM employees.employees;</code></pre>
                         <li>How many people got raises in 1999?
                         </li>
                         <pre><code contenteditable="" class="sql"> SELECT * from (
-        SELECT emp_no, count(*) AS number_of_salaries FROM salaries
+        SELECT emp_no, COUNT(*) AS number_of_salaries 
+        FROM salaries
         WHERE from_date&gt;'1998-01-01'
         AND from_date&lt;'2000-01-01'
         GROUP BY emp_no) a
         WHERE number_of_salaries &gt;1</code></pre>
                         <li>What's the most common job title we have?
                         </li>
-                        <pre><code contenteditable="" class="sql">SELECT title, COUNT(DISTINCT a.emp_no) FROM titles a
+                        <pre><code contenteditable="" class="sql">SELECT title, COUNT(DISTINCT a.emp_no) 
+FROM titles a
 JOIN employees b
 ON a.emp_no=b.emp_no
 GROUP BY title</code></pre>
@@ -2338,7 +2336,7 @@ varchar(4) after times_watched;</code></pre>
                         vickiboykis.com | @vboykis
                     </p>
                     <p>
-                        <a href="http://bit.ly/gdi-sql" target="_blank">http://bit.ly/gdi-sql</a>
+                        <a href="http://bit.ly/gdi-sql-2" target="_blank">http://bit.ly/gdi-sql-2</a>
                     </p>
                 </section>
 
@@ -2346,6 +2344,7 @@ varchar(4) after times_watched;</code></pre>
                   <h3> Thank you to the following people: </h3>
                       <p>
                     <a href = "http://www.saracanfield.com/">Sarah Canfield</a> - converting slides to Reveal
+                    <a href = "https://github.com/aelavender/">A.E.Lavender</a> - Sanity and syntax checks
                   </p>
                 </section>
             </div>
